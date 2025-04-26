@@ -7,23 +7,50 @@
     <!-- Google Fonts: Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
         body {
             background-color: #e2ebf5;
             font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
         }
-        .uxui-wrapper {
+        .site-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        nav {
+            background: #e2ebf5;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+        }
+        .nav-brand {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+        .nav-links a {
+            margin-left: 40px;
+            text-decoration: none;
+            color: #555;
+            font-size: 1em;
+        }
+        .nav-links a:hover {
+            color: #000;
+        }
+        .uxui-content {
+            margin-left: 60px;
+            margin-top: 60px;
             max-width: 600px;
-            margin: 60px auto 0 60px;
-            padding: 32px 36px 32px 36px;
-            background: #fff;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(120,150,185,0.06);
         }
         .name {
             color: #7996B9;
@@ -46,10 +73,30 @@
             font-weight: 400;
             margin-bottom: 0;
         }
+        footer {
+            background: #f2f5fa;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #ddd;
+            font-size: 1em;
+            color: #555;
+        }
+        footer a {
+            color: #555;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        footer a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
         @media (max-width: 700px) {
-            .uxui-wrapper {
-                margin: 32px 8px 0 8px;
-                padding: 18px 12px;
+            .uxui-content {
+                margin-left: 12px;
+                margin-top: 24px;
+                max-width: 98vw;
             }
             .name {
                 font-size: 1.4em;
@@ -64,13 +111,28 @@
     </style>
 </head>
 <body>
-    <div class="uxui-wrapper">
-        <div class="name">Joanna Lee</div>
-        <div class="role">UX/UI Designer</div>
-        <div class="description">
-            I have a strong foundation in UX/UI as a student at UMGC. I strive to demonstrate my expertise in creating user-centered accessible designs that align with business goals. My designs highlight my skills in user research, visual design, and functional prototyping.
+    <div class="site-wrapper">
+        <nav>
+            <a href="index.html" class="nav-brand">Joanna Lee</a>
+            <div class="nav-links">
+                <a href="market-research.html">MARKET RESEARCH</a>
+                <a href="social-media-marketing.html">SOCIAL MEDIA MARKETING</a>
+                <a href="ux-ui.html">UX/UI</a>
+            </div>
+        </nav>
+        <div class="uxui-content">
+            <div class="name">Joanna Lee</div>
+            <div class="role">UX/UI Designer</div>
+            <div class="description">
+                I have a strong foundation in UX/UI as a student at UMGC. I strive to demonstrate my expertise in creating user-centered accessible designs that align with business goals. My designs highlight my skills in user research, visual design, and functional prototyping.
+            </div>
         </div>
+        <footer>
+            <div>jdlee6526@gmail.com</div>
+            <div>
+                <a href="https://www.linkedin.com/in/joanna-lee-jdlee/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
-

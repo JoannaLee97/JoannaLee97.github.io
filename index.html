@@ -1,1 +1,63 @@
+<!DOCTYPE html> <html lang="en"> <head>
+    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Joanna's Portfolio - Home</title> <style>
+        body {
+            font-family: sans-serif; /* Sets a default font */
+            margin: 0; /* Removes default body margin */
+            padding: 0; /* Removes default body padding */
+        }
+        nav {
+            background-color: #F6F1EB; /* Light beige background for nav */
+            padding: 10px;
+            text-align: center; /* Center the nav links */
+        }
+        nav a {
+            margin: 0 15px; /* Spacing between nav links */
+            text-decoration: none; /* Remove underline from links */
+            color: #333; /* Dark grey color for links */
+        }
+        .container {
+            display: flex; /* Enables Flexbox layout for children */
+            align-items: center; /* Vertically aligns items in the center */
+            padding: 40px; /* Adds some space around the content */
+            max-width: 1200px; /* Limits the maximum width */
+            margin: 20px auto; /* Centers the container horizontally */
+        }
+        .image-column {
+            flex: 1; /* Takes up 1 part of the available space */
+            padding-right: 20px; /* Adds space to the right of the image */
+        }
+        .image-column img {
+            max-width: 100%; /* Makes image responsive, not exceeding its container width */
+            height: auto; /* Maintains aspect ratio */
+            display: block; /* Removes extra space below the image */
+        }
+        .text-column {
+            flex: 2; /* Takes up 2 parts of the available space (larger than image) */
+            padding-left: 20px; /* Adds space to the left of the text */
+        }
+        h1 {
+            font-size: 2.5em; /* Makes the heading larger */
+        }
+        p {
+            font-size: 1.1em; /* Slightly larger paragraph text */
+            line-height: 1.6; /* Improves readability */
+        }
+    </style>
+</head>
 
+<body>
+    <nav>
+        <a href="index.html">Home</a> <a href="market-research.html">Market Research</a> <a href="social-media-marketing.html">Social Media Marketing</a> <a href="ux-ui.html">UX/UI</a> <a href="contact.html">Contact</a> </nav>
+
+    <div class="container">
+        <div class="image-column">
+            <img src="your-image.jpg">
+        </div>
+        <div class="text-column">
+            <h1>Hello, I'm Joanna</h1> <p> I do marketing, research, and design.
+            </p>
+            </div>
+    </div>
+
+</body>
+</html>

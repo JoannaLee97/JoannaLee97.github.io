@@ -1,43 +1,71 @@
 <!DOCTYPE html> <html lang="en"> <head>
-    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Joanna's Portfolio - Home</title> <style>
+    <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Joanna Lee's Portfolio - Home</title> <style>
         body {
             font-family: sans-serif; /* Sets a default font */
             margin: 0; /* Removes default body margin */
             padding: 0; /* Removes default body padding */
+            background-color: #F6F1EB; /* Sets the overall page background color */
+            color: #333; /* Default text color */
         }
+
+        /* Navigation Bar Styling */
         nav {
-            background-color: #F6F1EB; /* Light beige background for nav */
-            padding: 10px;
-            text-align: right; /*  nav links to the right*/
+            background-color: #F6F1EB; /* Sets the nav bar background color */
+            padding: 15px 40px; /* Adds padding: top/bottom 15px, left/right 40px */
+            display: flex; /* Enables Flexbox layout */
+            justify-content: space-between; /* Pushes items to opposite ends: brand left, links right */
+            align-items: center; /* Vertically aligns items in the middle */
+            border-bottom: 1px solid #ddd; /* Optional: adds a subtle line below the nav */
         }
-        nav a {
-            margin: 0 15px; /* Spacing between nav links */
+
+        .nav-brand { /* Styling for your name link */
+            font-size: 1.5em; /* Makes the name larger */
+            font-weight: bold; /* Makes the name bold */
+            color: #333; /* Dark text color for the name */
+            text-decoration: none; /* Removes underline from the name link */
+        }
+
+        .nav-links a { /* Styling for the navigation links on the right */
+            margin-left: 20px; /* Adds space to the left of each link (pushes them apart) */
             text-decoration: none; /* Remove underline from links */
-            color: #333; /* Dark grey color for links */
+            color: #555; /* Slightly lighter color for nav links */
+            font-size: 1em;
         }
+         .nav-links a:hover { /* Style for links when hovered over */
+            color: #000; /* Darken link color on hover */
+         }
+
+        /* Main Content Area Styling */
         .container {
-            display: flex; /* Enables Flexbox layout for children */
+            display: flex; /* Enables Flexbox layout for children (image and text columns) */
             align-items: center; /* Vertically aligns items in the center */
-            padding: 40px; /* Adds some space around the content */
-            max-width: 1200px; /* Limits the maximum width */
-            margin: 20px auto; /* Centers the container horizontally */
+            padding: 40px; /* Adds space inside the content container */
+            max-width: 1200px; /* Limits the maximum width of the content */
+            margin: 40px auto; /* Adds space above/below and centers the container horizontally */
         }
+
         .image-column {
             flex: 1; /* Takes up 1 part of the available space */
-            padding-right: 20px; /* Adds space to the right of the image */
+            padding-right: 30px; /* Adds space to the right of the image */
         }
+
         .image-column img {
             max-width: 100%; /* Makes image responsive, not exceeding its container width */
             height: auto; /* Maintains aspect ratio */
             display: block; /* Removes extra space below the image */
+            border-radius: 8px; /* Optional: adds slightly rounded corners to the image */
         }
+
         .text-column {
             flex: 2; /* Takes up 2 parts of the available space (larger than image) */
-            padding-left: 20px; /* Adds space to the left of the text */
+            padding-left: 30px; /* Adds space to the left of the text */
         }
+
         h1 {
-            font-size: 2.5em; /* Makes the heading larger */
+            font-size: 2.8em; /* Makes the main heading larger */
+            margin-bottom: 15px; /* Adds space below the heading */
         }
+
         p {
             font-size: 1.1em; /* Slightly larger paragraph text */
             line-height: 1.6; /* Improves readability */
@@ -47,14 +75,18 @@
 
 <body>
     <nav>
-        <a href="index.html">Home</a> <a href="market-research.html">Market Research</a> <a href="social-media-marketing.html">Social Media Marketing</a> <a href="ux-ui.html">UX/UI</a> <a href="contact.html">Contact</a> </nav>
+        <a href="index.html" class="nav-brand">Joanna Lee</a>
+
+        <div class="nav-links">
+            <a href="market-research.html">Market Research</a> <a href="social-media-marketing.html">Social Media Marketing</a> <a href="ux-ui.html">UX/UI</a> <a href="contact.html">Contact</a> </div>
+    </nav>
 
     <div class="container">
         <div class="image-column">
-            <img src="pfp.jpg">
+            <img src="your-image.jpg" alt="A picture of Joanna">
         </div>
         <div class="text-column">
-            <h1>Hello, I'm Joanna</h1> <p> Marketing, research, and design.
+            <h1>Hello, I'm Joanna</h1> <p> I do marketing, research, and design.
             </p>
             </div>
     </div>

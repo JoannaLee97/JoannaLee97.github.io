@@ -16,12 +16,12 @@
             background-color: #e2ebf5;
             color: #333;
             font-family: 'Poppins', sans-serif;
-            height: 100%;
-            margin: 0;
-            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
         .site-wrapper {
-            min-height: 100vh;
+            flex: 1;
             display: flex;
             flex-direction: column;
         }
@@ -50,7 +50,7 @@
         }
         .container {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             padding: 40px;
             max-width: 1200px;
             margin: 40px auto;
@@ -82,12 +82,47 @@
             margin-bottom: 25px;
             letter-spacing: 0.02em;
         }
+        .education-section {
+            background: #f7fafd;
+            border-radius: 8px;
+            padding: 24px 28px;
+            margin: 32px 0 0 0;
+            box-shadow: 0 2px 8px rgba(120,150,185,0.05);
+        }
+        .education-section h2 {
+            margin-top: 0;
+            font-size: 1.3em;
+            color: #7996B9;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+        .education-details {
+            margin-bottom: 10px;
+        }
+        .education-meta {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        .education-degree {
+            font-size: 1.07em;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+        .education-list {
+            margin: 0 0 0 18px;
+            padding: 0;
+        }
+        .education-list li {
+            margin-bottom: 7px;
+            font-size: 1em;
+        }
         p {
             font-size: 1.1em;
             line-height: 1.6;
         }
         footer {
-            background: #f2f5fa;
+            background: #e2ebf5;
             padding: 15px 40px;
             display: flex;
             justify-content: space-between;
@@ -127,6 +162,23 @@
                 <p>
                     As a marketing major with a passion for digital design, I'm excited to pursue opportunities that combine both marketing and UX/UI. With a strong background in social media management and community engagement, I bring a user-centric and strategic approach to digital experiences. My experience as a community partner and manager taught me to understand diverse audience needs, which I apply to creating intuitive designs and impactful marketing strategies.
                 </p>
+                <section class="education-section">
+                    <h2>Education</h2>
+                    <div class="education-details">
+                        <div class="education-meta">
+                            University of Maryland Global Campus<br>
+                            Aug 2023 - May 2026
+                        </div>
+                        <div class="education-degree">
+                            B.S. Marketing &mdash; Minor in Web &amp; Digital Design &mdash; Certificate in Digital Marketing
+                        </div>
+                        <ul class="education-list">
+                            <li>Academic Achievements: 3.9 Cumulative, Dean's List Spring 2024 &amp; Fall 2024</li>
+                            <li>American Marketing Association (AMA): Student Member, Networked with marketing professionals</li>
+                            <li>Graphic Designer Student Association: Student Member, Improved Photoshop and Illustrator skills</li>
+                        </ul>
+                    </div>
+                </section>
             </div>
         </div>
         <footer>

@@ -18,7 +18,7 @@
             box-sizing: inherit;
         }
         body {
-            background-color: #e2ebf5; /* Background for areas outside container */
+            background-color: #e2ebf5;
             color: #333;
             font-family: 'Poppins', sans-serif;
             min-height: 100vh;
@@ -26,10 +26,10 @@
             flex-direction: column;
         }
         .site-wrapper {
-            flex: 1; /* Makes wrapper fill space between nav and footer */
+            flex: 1;
             display: flex;
             flex-direction: column;
-            overflow: hidden; /* Prevent potential body scrollbars */
+            overflow: hidden;
         }
 
         /* Consistent Navigation Bar Styles */
@@ -64,25 +64,25 @@
         /* Main Layout Container (Sidebar + Content) */
         .portfolio-container {
             display: flex;
-            flex: 1; /* Allow this container to fill the site-wrapper */
-            width: 100%; /* Ensure full width */
-            overflow: hidden; /* Prevent internal scrollbars affecting layout */
+            flex: 1;
+            width: 100%;
+            overflow: hidden;
         }
 
         /* Sidebar Styles */
         .sidebar {
             width: 280px;
             flex-shrink: 0;
-            background-color: #f2f5fa; /* Sidebar background */
+            background-color: #f2f5fa;
             padding: 40px 30px;
             display: flex;
             flex-direction: column;
             border-right: 1px solid #e9ecef;
-            overflow-y: auto; /* Allow sidebar scrolling if content exceeds height */
+            overflow-y: auto;
         }
 
         .sidebar-content {
-             flex-grow: 1; /* Takes up available space */
+             flex-grow: 1;
         }
         .sidebar .name {
             font-size: 1.8em;
@@ -103,27 +103,23 @@
             margin-bottom: 30px;
         }
         .sidebar .social-links {
-             /* Centering the content */
              display: flex;
-             justify-content: center; /* Center items horizontally */
+             justify-content: center;
              align-items: center;
              flex-wrap: wrap;
-             gap: 10px; /* Adjust gap if needed, though less relevant for one item */
+             gap: 10px;
         }
         .sidebar .social-links a {
             color: #6c757d;
             text-decoration: none;
             font-size: 1.2em;
-            /* margin-right: 15px; Removed as only one item exists */
             display: inline-flex;
             align-items: center;
             line-height: 1;
         }
-        .sidebar .social-links a i { /* General style for icons (if any were left) */
+        .sidebar .social-links a i {
             font-size: 1.5em;
-            /* margin-right: 5px; Removed */
         }
-        /* Specifically target the Resume link */
         .sidebar .social-links a.resume-link {
              font-size: 0.9em;
              font-weight: 500;
@@ -134,8 +130,8 @@
         }
          .sidebar .social-links a.resume-link i {
              font-size: 1em;
-             margin-left: 5px; /* Space after text, before icon */
-             margin-right: 0; /* Ensure no extra right margin */
+             margin-left: 5px;
+             margin-right: 0;
          }
         .sidebar .social-links a:hover {
             color: #007bff;
@@ -144,7 +140,6 @@
             background-color: #dee2e6;
             border-color: #adb5bd;
         }
-
 
         /* Content Area Styles */
         .content-area {
@@ -169,6 +164,8 @@
             display: flex;
             flex-direction: column;
             transition: box-shadow 0.2s ease-in-out;
+            text-decoration: none; /* Removes underlines from the links */
+            color: inherit; /* Keeps the text color consistent */
         }
         .project-card:hover {
              box-shadow: 0 6px 16px rgba(0,0,0,0.1);
@@ -277,7 +274,6 @@
              .projects-grid{ gap: 20px; }
              footer { padding: 10px 20px; flex-direction: column; text-align: center; gap: 5px; }
         }
-
     </style>
 </head>
 <body>

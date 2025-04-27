@@ -3,122 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joanna Lee - Portfolio</title> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Joanna Lee - UX/UI Portfolio</title> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        html {
-            box-sizing: border-box;
+        /* Core structure styles from Home page */
+        html, body {
             height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         *, *:before, *:after {
             box-sizing: inherit;
         }
-
         body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column; /* Stack nav, content, footer vertically */
-            min-height: 100vh; /* Ensure body takes at least full viewport height */
-            background-color: #ffffff; /* White background for areas outside elements */
-            font-family: 'Poppins', sans-serif;
+            background-color: #e2ebf5; /* <<< Background from Home page */
             color: #333;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-
-        /* Site Wrapper - not strictly needed with body flex, but can group main content */
         .site-wrapper {
-             display: flex;
-             flex-direction: column;
-             flex-grow: 1; /* Allows wrapper to take space between nav and footer */
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
-        /* Navigation Bar Styles */
+        /* Consistent Navigation Bar Styles from Home page */
         nav {
-            background: #f8f9fa; /* Light background consistent with sidebar */
+            background: #e2ebf5; /* <<< Nav background from Home page */
             padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #e9ecef; /* Subtle border */
-            flex-shrink: 0; /* Prevent nav from shrinking */
+            border-bottom: 1px solid #ddd;
+            flex-shrink: 0;
         }
         .nav-brand {
             font-size: 1.5em;
             font-weight: bold;
-            color: #007bff; /* Using a blue accent color */
+            color: #333; /* <<< Nav brand color from Home page */
             text-decoration: none;
         }
         .nav-links a {
-            margin-left: 30px; /* Reduced margin slightly */
+            margin-left: 40px;
             text-decoration: none;
-            color: #555;
-            font-size: 0.95em; /* Slightly smaller nav links */
-            font-weight: 500;
+            color: #555; /* <<< Nav link color from Home page */
+            font-size: 1em;
+            font-weight: 500; /* Added weight for consistency */
             text-transform: uppercase; /* Match original style */
             letter-spacing: 0.5px;
         }
         .nav-links a:hover {
-            color: #0056b3; /* Darker blue on hover */
+            color: #000; /* <<< Nav link hover color from Home page */
         }
 
-        /* Main Layout Container (Sidebar + Content) */
+        /* Main Layout Container (Sidebar + Content) for UX/UI page */
         .portfolio-container {
             display: flex;
             flex: 1; /* Allow this container to grow */
             width: 100%;
+            background-color: #ffffff; /* Set distinct background for content area */
+            margin: 20px 0; /* Add some vertical margin if desired */
+            max-width: 1400px; /* Optional: Limit max width */
+            margin-left: auto; /* Center container */
+            margin-right: auto; /* Center container */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Optional subtle shadow */
+            border-radius: 8px; /* Optional rounded corners */
+            overflow: hidden; /* Clip child corners if needed */
         }
 
-        /* Sidebar Styles */
+        /* Sidebar Styles specific to UX/UI page */
         .sidebar {
-            width: 280px; /* Fixed width for the sidebar */
-            flex-shrink: 0; /* Prevent sidebar from shrinking */
-            background-color: #f8f9fa; /* Slightly off-white for sidebar */
+            width: 280px;
+            flex-shrink: 0;
+            background-color: #f8f9fa; /* Light background for sidebar */
             padding: 40px 30px;
             display: flex;
             flex-direction: column;
-            border-right: 1px solid #e9ecef; /* Subtle border */
-            /* Removed height/sticky properties to work within body flex */
+            border-right: 1px solid #e9ecef;
         }
 
         .sidebar-content {
-             flex-grow: 1; /* Allows this div to grow and push nav down */
+             flex-grow: 1;
         }
-
         .sidebar .name {
             font-size: 1.8em;
             font-weight: 600;
-            color: #343a40; /* Darker name */
+            color: #343a40;
             margin-bottom: 5px;
         }
-
         .sidebar .role {
             font-size: 1.1em;
             font-weight: 400;
-            color: #6c757d; /* Muted color for role */
+            color: #6c757d;
             margin-bottom: 25px;
         }
-
         .sidebar .description {
             font-size: 0.9em;
             line-height: 1.6;
             color: #495057;
             margin-bottom: 30px;
         }
-
         .sidebar .social-links a {
             color: #6c757d;
             text-decoration: none;
-            font-size: 1.5em; /* Make icon larger */
+            font-size: 1.5em;
             margin-right: 15px;
         }
         .sidebar .social-links a:hover {
             color: #007bff;
         }
-
          .sidebar-nav {
-            margin-top: 30px; /* Add some space above the bottom nav */
+            margin-top: 30px;
          }
-
         .sidebar-nav a {
             display: block;
             text-decoration: none;
@@ -128,49 +127,46 @@
             margin-bottom: 5px;
             font-weight: 500;
         }
-
         .sidebar-nav a:hover {
             color: #007bff;
         }
 
-        /* Content Area Styles */
+        /* Content Area Styles specific to UX/UI page */
         .content-area {
-            flex-grow: 1; /* Allows content area to take remaining space */
+            flex-grow: 1;
             padding: 40px 50px;
-            overflow-y: auto; /* Allow scrolling ONLY if content exceeds space */
-            background-color: #ffffff; /* Ensure white background */
+            overflow-y: auto;
         }
-
         .projects-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 40px; /* Spacing between project cards */
+            gap: 30px; /* Adjusted gap */
         }
-
-        /* Project Card Styles */
         .project-card {
             background: #ffffff;
-            border: 1px solid #e9ecef; /* Subtle border around card */
+            border: 1px solid #e9ecef;
             border-radius: 8px;
-            width: calc(50% - 20px); /* Two columns layout, accounting for gap */
-            margin-bottom: 20px; /* Space below cards if they wrap */
+            width: calc(50% - 15px); /* Adjusted for new gap */
+            margin-bottom: 20px;
             text-align: left;
-            padding: 20px; /* <<< THIS adds space around image and text inside the card */
+            padding: 20px; /* Space around image/text */
             display: flex;
-            flex-direction: column; /* Stack image and info vertically */
+            flex-direction: column;
+            transition: box-shadow 0.2s ease-in-out;
         }
-
+        .project-card:hover {
+             box-shadow: 0 6px 16px rgba(0,0,0,0.1); /* Add hover effect */
+        }
         .project-image {
             width: 100%;
-            margin-bottom: 20px; /* Space between image and text below */
+            margin-bottom: 20px;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #f8f9fa; /* Light background for image area */
-            border-radius: 4px; /* Slightly rounded corners for image area */
+            background-color: #f8f9fa;
+            border-radius: 4px;
         }
-
         .project-image img {
             display: block;
             width: 100%;
@@ -179,145 +175,139 @@
             object-fit: contain;
             max-height: 350px;
         }
-
         .project-info {
-             flex-grow: 1; /* Allow text block to take remaining space */
+             flex-grow: 1;
         }
-
         .project-title {
             font-size: 1.1em;
             font-weight: 600;
             color: #333;
             margin-bottom: 5px;
         }
-
         .project-desc {
             font-size: 0.9em;
             color: #6c757d;
             line-height: 1.5;
         }
 
-        /* Footer Styles */
+        /* Consistent Footer Styles from Home page */
         footer {
-            background: #f8f9fa; /* Match nav/sidebar background */
+            background: #f2f5fa; /* <<< Footer background from Home page */
             padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid #e9ecef; /* Subtle border */
-            font-size: 0.9em;
-            color: #555;
-            flex-shrink: 0; /* Prevent footer from shrinking */
+            border-top: 1px solid #ddd;
+            font-size: 1em;
+            color: #555; /* <<< Footer text color from Home page */
+            flex-shrink: 0;
         }
         footer a {
-            color: #007bff; /* Blue link color */
+            color: #555; /* <<< Footer link color from Home page */
             text-decoration: none;
             font-weight: 500;
         }
         footer a:hover {
-            color: #0056b3; /* Darker blue on hover */
+            color: #000; /* <<< Footer link hover color from Home page */
             text-decoration: underline;
         }
 
         /* Responsive Adjustments */
-        @media (max-width: 992px) {
-            .project-card {
-                width: calc(100% - 20px); /* Full width minus gap compensation */
-                /* Or simply width: 100%; if gap isn't critical */
-                 margin-bottom: 30px;
+        @media (max-width: 1440px) { /* Adjust breakpoint for container */
+            .portfolio-container {
+                max-width: 95%;
+                margin: 15px auto;
             }
-             .projects-grid{
-                 gap: 20px; /* Reduce gap */
-             }
-             .content-area {
-                padding: 30px;
-             }
-             .sidebar {
-                 padding: 30px 20px;
-             }
+        }
+
+        @media (max-width: 992px) {
              nav, footer {
-                 padding: 15px 20px;
+                 padding: 15px 20px; /* Reduce padding */
              }
              .nav-links a {
-                 margin-left: 20px;
+                 margin-left: 20px; /* Reduce space */
+             }
+             .portfolio-container {
+                 margin: 15px; /* Reduce margin */
+                 flex-direction: column; /* Stack sidebar/content */
+             }
+             .sidebar {
+                 width: 100%; /* Full width */
+                 border-right: none;
+                 border-bottom: 1px solid #e9ecef;
+                 padding: 30px 20px;
+             }
+             .content-area {
+                 padding: 30px 20px;
+             }
+             .project-card {
+                 width: calc(50% - 10px); /* Keep two columns if possible, adjust gap */
+             }
+             .projects-grid{
+                 gap: 20px;
              }
         }
 
         @media (max-width: 768px) {
-             body {
-                 min-height: 0; /* Allow body height to adjust */
-             }
              nav {
                  padding: 10px 20px;
-                 flex-direction: column; /* Stack nav items */
+                 flex-direction: column;
                  align-items: flex-start;
              }
              .nav-brand {
                  margin-bottom: 10px;
              }
              .nav-links {
-                 margin-left: 0; /* Reset margin */
+                 margin-left: 0;
                  display: flex;
-                 flex-wrap: wrap; /* Allow links to wrap */
-                 gap: 15px; /* Space between links */
+                 flex-wrap: wrap;
+                 gap: 15px;
              }
              .nav-links a {
-                 margin-left: 0; /* Reset */
+                 margin-left: 0;
              }
-
-            .portfolio-container {
-                flex-direction: column; /* Stack sidebar and content */
-            }
-
-            .sidebar {
-                width: 100%; /* Full width */
-                height: auto;
-                position: static;
-                border-right: none;
-                border-bottom: 1px solid #e9ecef;
-                padding: 20px;
-            }
+             .portfolio-container {
+                 margin: 10px; /* Further reduce margin */
+                 border-radius: 4px; /* Less rounding */
+             }
+             .sidebar {
+                 padding: 20px;
+             }
              .sidebar-nav {
                  margin-top: 20px;
                  display: flex;
                  flex-wrap: wrap;
                  gap: 15px;
              }
-             .sidebar-nav a {
-                 padding: 5px 0;
-                 margin-bottom: 0;
+             .sidebar-nav a { padding: 5px 0; margin-bottom: 0; }
+             .content-area { padding: 20px; }
+             .project-card {
+                 width: 100%; /* Stack projects */
+                 padding: 15px;
              }
-
-            .content-area {
-                padding: 20px;
-                /* overflow-y: visible; Remove overflow constraint */
-            }
-
-            .project-card {
-                width: 100%;
-                padding: 15px;
-            }
-
-            footer {
-                padding: 10px 20px;
-                flex-direction: column; /* Stack footer items */
-                text-align: center;
-                gap: 5px;
-            }
+             .projects-grid{ gap: 20px; }
+             footer {
+                 padding: 10px 20px;
+                 flex-direction: column;
+                 text-align: center;
+                 gap: 5px;
+             }
         }
 
     </style>
 </head>
 <body>
+    <div class="site-wrapper">
+        <nav>
+            <a href="index.html" class="nav-brand">Joanna Lee</a>
+            <div class="nav-links">
+                <a href="market-research.html">MARKET RESEARCH</a>
+                <a href="social-media-marketing.html">SOCIAL MEDIA MARKETING</a>
+                <a href="ux-ui.html">UX/UI</a>
+            </div>
+        </nav>
 
-    <nav>
-        <a href="index.html" class="nav-brand">Joanna Lee</a>
-        <div class="nav-links">
-            <a href="market-research.html">MARKET RESEARCH</a>
-            <a href="social-media-marketing.html">SOCIAL MEDIA MARKETING</a> <a href="ux-ui.html">UX/UI</a> </div>
-    </nav>
-
-    <div class="site-wrapper"> <div class="portfolio-container">
+        <div class="portfolio-container">
             <aside class="sidebar">
                 <div class="sidebar-content">
                     <div class="name">Joanna Lee</div>
@@ -342,7 +332,8 @@
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="1Brick-Executive.png" alt="Campfire Travel Project Screenshot" style="background-color:#eee;"> </div>
+                            <img src="1Brick-Executive.png" alt="Campfire Travel Project Screenshot" style="background-color:#eee;">
+                        </div>
                         <div class="project-info">
                             <div class="project-title">Campfire Travel</div>
                             <div class="project-desc">CMST 325 Fundamentals of Digital Design</div>
@@ -351,7 +342,8 @@
 
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="image2.jpg" alt="Berkshire Hathaway Project Screenshot" style="background-color:#eee;"> </div>
+                            <img src="image2.jpg" alt="Berkshire Hathaway Project Screenshot" style="background-color:#eee;">
+                        </div>
                          <div class="project-info">
                             <div class="project-title">Berkshire Hathaway</div>
                             <div class="project-desc">CMST 308 User Experience and Interface Design</div>
@@ -359,8 +351,7 @@
                     </div>
                     </div>
             </main>
-        </div>
-    </div> <footer>
+        </div> </div> <footer>
         <div>jdlee6526@gmail.com</div>
         <div>
             <a href="https://www.linkedin.com/in/joanna-lee-jdlee/" target="_blank" rel="noopener noreferrer">LinkedIn</a>

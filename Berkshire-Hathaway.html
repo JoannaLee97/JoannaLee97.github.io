@@ -70,7 +70,7 @@
         /* Main Content Area */
         main {
             padding: 30px 40px;
-            background-color: #f2f5fa;
+            background-color: #f2f5fa; /* Content area background */
             width: 80%;
             max-width: 1200px;
             margin-top: 20px;
@@ -80,11 +80,15 @@
         }
         .back-link {
             display: inline-block;
-            margin-bottom: 30px;
+            margin-bottom: 30px; /* Only applies effectively to top link */
             color: #555;
             text-decoration: none;
             font-size: 0.95em;
+            transition: color 0.2s ease; /* Smooth hover */
         }
+         .back-link:hover {
+             color: #000; /* Darker on hover */
+         }
         .back-link i {
             margin-right: 8px;
             transition: transform 0.2s ease-in-out;
@@ -92,6 +96,16 @@
         .back-link:hover i {
              transform: translateX(-3px);
         }
+        /* Style for the bottom back link */
+        .back-link-bottom {
+             display: block; /* Make it block level */
+             margin-top: 50px; /* Add space above the bottom link */
+             margin-bottom: 0; /* Reset bottom margin for this specific link */
+             text-align: left; /* Ensure left alignment */
+             border-top: 1px solid #eee; /* Optional separator */
+             padding-top: 20px; /* Space above text after border */
+        }
+
 
         /* Project Header Styles */
         .project-header {
@@ -197,11 +211,11 @@
             padding-left: 25px;
             list-style-type: disc;
             color: #555;
-            font-size: 1em; /* Ensure list text size consistency */
-            line-height: 1.7; /* Ensure list line height consistency */
+            font-size: 1em;
+            line-height: 1.7;
         }
         .role-description li {
-            margin-bottom: 15px; /* Keep consistent spacing */
+            margin-bottom: 15px;
         }
          .role-image {
              margin-top: 30px;
@@ -245,8 +259,8 @@
         .content-section li {
             margin-bottom: 10px;
         }
-        .wireframes-section p { /* Specific style for paragraph in wireframes */
-             margin-bottom: 15px; /* Add space between p and ul */
+        .wireframes-section p {
+             margin-bottom: 15px;
         }
         .usability-testing li strong {
              font-weight: 600;
@@ -271,38 +285,36 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        /* --- NEW Lessons Learned / Next Steps Section Styling --- */
+        /* Lessons Learned / Next Steps Section Styling */
         .lessons-next-steps-section {
             display: flex;
-            gap: 40px; /* Space between columns */
-            margin-top: 40px; /* Space above this section */
-            padding: 30px 0 10px 0; /* Padding top/bottom, adjust as needed */
-            border-top: 1px solid #eee; /* Optional Separator */
+            gap: 40px;
+            margin-top: 40px;
+            padding: 30px 0 10px 0;
+            border-top: 1px solid #eee;
         }
         .lessons-learned-column,
         .next-steps-column {
-            flex: 1; /* Equal width */
+            flex: 1;
         }
         .lessons-next-steps-section h3 {
-            font-size: 1.3em; /* Heading size */
+            font-size: 1.3em;
             font-weight: 600;
             color: #444;
             margin-top: 0;
-            margin-bottom: 15px; /* Space below heading */
+            margin-bottom: 15px;
         }
         .lessons-next-steps-section ul {
             margin: 0;
-            padding-left: 20px; /* Indentation for list */
+            padding-left: 20px;
             list-style: disc;
-            color: #555; /* Text color */
-            font-size: 1em; /* Consistent text size */
+            color: #555;
+            font-size: 1em;
         }
         .lessons-next-steps-section li {
-            margin-bottom: 12px; /* Space between items */
-            line-height: 1.6; /* Line height */
+            margin-bottom: 12px;
+            line-height: 1.6;
         }
-        /* --- END Lessons Learned / Next Steps Section Styling --- */
-
 
         /* Consistent Footer Styles */
         footer {
@@ -399,14 +411,17 @@
                  margin-top: 30px;
             }
 
-            /* --- Responsive Lessons Learned / Next Steps --- */
             .lessons-next-steps-section {
-                flex-direction: column; /* Stack columns */
-                gap: 30px; /* Adjust vertical gap */
+                flex-direction: column;
+                gap: 30px;
                 margin-top: 30px;
                 padding-top: 20px;
             }
-             /* --- END Responsive Lessons Learned / Next Steps --- */
+             /* Adjust bottom back link spacing on mobile */
+             .back-link-bottom {
+                  margin-top: 30px;
+                  padding-top: 15px;
+             }
 
             .footer-container {
                  flex-direction: column; align-items: center;
@@ -510,11 +525,11 @@
 
             <div class="image-gallery-section">
                 <div class="image-gallery-column">
-                    <img src="1News-Berkshire.png"> </div>
+                    <img src="News-Berkshire.png" alt="News Section Mockup"> </div>
                 <div class="image-gallery-column">
-                    <img src="1Sustainability-Berkshire.png"> </div>
+                    <img src="Sustainability-Berkshire.png" alt="Sustainability Section Mockup"> </div>
                 <div class="image-gallery-column">
-                    <img src="1Documents-Berkshire.png"> </div>
+                    <img src="Documents-Berkshire.png" alt="Documents Section Mockup"> </div>
             </div>
 
             <div class="content-section wireframes-section">
@@ -526,6 +541,7 @@
                     <li>New design features a minimalist design with streamlined navigation for easier access.</li>
                 </ul>
             </div>
+
             <div class="lessons-next-steps-section">
                 <div class="lessons-learned-column">
                     <h3>Lessons Learned</h3>
@@ -545,6 +561,10 @@
                     </ul>
                 </div>
             </div>
+
+            <a href="ux-ui.html" class="back-link back-link-bottom">
+                <i class="fas fa-arrow-left"></i> Back to Case Studies
+            </a>
             </main>
     </div>
 

@@ -89,28 +89,41 @@
         .back-link i {
             margin-right: 5px;
         }
+
+        /* MODIFIED SECTION START */
+        .project-header {
+            display: flex;
+            align-items: center; /* Vertically align items */
+            justify-content: space-between; /* Pushes text block and image apart */
+            margin-bottom: 30px;
+            gap: 20px; /* Adds space between text block and image if needed */
+        }
+        .project-header-text {
+             /* This div now holds the text */
+             flex-basis: 50%; /* Example: give text block roughly half the space */
+             /* Adjust flex properties as needed */
+        }
         .project-title {
             font-size: 2.5em;
             font-weight: bold;
             margin-bottom: 5px;
             color: #333;
+            /* Removed margin-bottom if previously applied specifically here */
         }
         .project-subtitle {
             font-size: 1.1em;
             color: #777;
-            margin-bottom: 20px;
-        }
-        .project-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 30px;
+             margin-bottom: 0; /* Remove bottom margin if title/subtitle block handles spacing */
+            /* Removed margin-bottom if previously applied specifically here */
         }
         .project-header img {
-            max-width: 45%;
+            max-width: 45%; /* Keep image size constrained */
             height: auto;
             border-radius: 8px;
+            display: block; /* Good practice for images in flex */
         }
+        /* MODIFIED SECTION END */
+
         .overview-goal {
             display: flex;
             justify-content: space-between;
@@ -190,14 +203,23 @@
             main {
                  padding: 15px; /* Adjust padding */
              }
-            .project-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .project-header img {
-                max-width: 100%;
-                margin-top: 20px;
-            }
+
+            /* Responsive project header */
+             .project-header {
+                 flex-direction: column; /* Stack title/text and image vertically */
+                 align-items: flex-start; /* Align items to the start */
+             }
+             .project-header-text {
+                  /* Adjust text block for stacked layout if needed */
+                  margin-bottom: 20px; /* Add space between text and image */
+                  flex-basis: auto; /* Reset basis */
+             }
+             .project-header img {
+                 max-width: 100%; /* Allow image to take full width */
+                 /* Removed margin-top if set previously */
+             }
+            /* End Responsive project header */
+
             .overview-goal {
                 flex-direction: column;
                 gap: 20px; /* Adjust gap for vertical layout */
@@ -235,14 +257,13 @@
             <a href="ux-ui.html" class="back-link">
                 <i class="fas fa-arrow-left"></i> Back to Case Studies
             </a>
-            <h1 class="project-title">Berkshire Hathaway</h1>
-            <p class="project-subtitle">CMST 308 User Experience and Interface Design</p>
 
             <div class="project-header">
-                <div></div>
+                <div class="project-header-text"> <h1 class="project-title">Berkshire Hathaway</h1>
+                    <p class="project-subtitle">CMST 308 User Experience and Interface Design</p>
+                </div>
                 <img src="Home-Berkshire-Hathaway.jpg" alt="Berkshire Hathaway Project Image">
             </div>
-
             <div class="overview-goal">
                 <div class="overview-section">
                     <h2 class="overview-title">Overview</h2>

@@ -81,47 +81,43 @@
         .projects-column {
             flex: 1;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            justify-content: space-around; /* Distribute items evenly */
             padding-left: 40px;
         }
         .project-card {
             background: #f2f5fa;
             border-radius: 12px;
             box-shadow: 0 2px 8px rgba(120,150,185,0.06);
-            margin-bottom: 20px;
+            padding: 10px; /* Reduced padding */
+            text-align: center;
+            margin-bottom: 20px; /* Reduced margin */
             width: 45%;
             box-sizing: border-box;
-            display: flex;
-            flex-direction: column; /* Stack image, title, and description */
-            overflow: hidden; /* Ensure nothing sticks out */
         }
         .project-image {
             width: 100%;
-            height: auto; /* Adjust height automatically */
-            max-height: 260px; /* Set a maximum height */
+            height: 160px; /* Reduced height */
             border-radius: 8px;
-            margin-bottom: 0; /* Remove space */
+            margin-bottom: 5px; /* Reduced margin */
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         .project-image img {
-            width: 100%; /* Make the image fill the width */
-            object-fit: cover; /* Cover the area, cropping if needed */
-        }
-        .project-info {
-            padding: 10px; /* Padding for the title and description */
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
         }
         .project-title {
-            font-size: 1em;
+            font-size: 1em; /* Reduced font size */
             font-weight: 600;
             color: #333;
-            margin-bottom: 3px;
+            margin-bottom: 3px; /* Reduced margin */
         }
         .project-desc {
-            font-size: 0.9em;
+            font-size: 0.8em; /* Reduced font size */
             color: #888;
         }
         footer {
@@ -182,21 +178,17 @@
             <div class="projects-column">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="image1.jpg" alt="Campfire Travel">
+                        <img src="1Brick-Executive.png">
                     </div>
-                    <div class="project-info">
-                        <div class="project-title">Campfire Travel</div>
-                        <div class="project-desc">CMST 295 Fundamentals of Digital Design</div>
-                    </div>
+                    <div class="project-title">Brick Executive</div>
+                    <div class="project-desc">Internship</div>
                 </div>
                 <div class="project-card">
                     <div class="project-image">
                         <img src="image2.jpg" alt="Berkshire Hathaway">
                     </div>
-                    <div class="project-info">
-                        <div class="project-title">Berkshire Hathaway</div>
-                        <div class="project-desc">CMST 308 User Experience and Interface Design</div>
-                    </div>
+                    <div class="project-title">Berkshire Hathaway</div>
+                    <div class="project-desc">CMST 308 User Experience and Interface Design</div>
                 </div>
             </div>
         </div>

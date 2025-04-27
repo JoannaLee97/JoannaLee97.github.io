@@ -4,200 +4,258 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joanna Lee - UX/UI Designer</title>
-    <!-- Google Fonts: Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
         }
+
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+
         body {
-            background-color: #e2ebf5;
+            background-color: #ffffff; /* Changed background to white like the image */
             font-family: 'Poppins', sans-serif;
+            display: flex; /* Use flexbox for the main layout */
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
+            color: #333; /* Default text color */
         }
-        .site-wrapper {
-            flex: 1;
+
+        .portfolio-container {
             display: flex;
-            flex-direction: column;
-            min-height: 0;
+            width: 100%;
             height: 100%;
         }
-        nav {
-            background: #e2ebf5;
-            padding: 15px 40px;
+
+        .sidebar {
+            width: 280px; /* Fixed width for the sidebar */
+            flex-shrink: 0; /* Prevent sidebar from shrinking */
+            background-color: #f8f9fa; /* Slightly off-white for sidebar */
+            padding: 50px 30px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #ddd;
+            flex-direction: column;
+            height: 100vh; /* Make sidebar full height */
+            position: sticky; /* Make sidebar stick on scroll */
+            top: 0;
+            border-right: 1px solid #e9ecef; /* Subtle border */
         }
-        .nav-brand {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #7996B9;
-            text-decoration: none;
+
+        .sidebar-content {
+             flex-grow: 1; /* Allows this div to grow and push nav down */
         }
-        .nav-links a {
-            margin-left: 40px;
-            text-decoration: none;
-            color: #555;
-            font-size: 1em;
+
+        .sidebar .name {
+            font-size: 1.8em; /* Adjusted size */
+            font-weight: 600;
+            color: #000; /* Darker name */
+            margin-bottom: 5px;
         }
-        .nav-links a:hover {
-            color: #000;
-        }
-        .main-content {
-            flex: 1;
-            display: flex;
-            padding: 40px 60px 0;
-        }
-        .left-column {
-            flex: 0 0 30%;
-        }
-        .name {
-            color: #7996B9;
-            font-size: 2.2em;
-            font-weight: 700;
-            margin-bottom: 6px;
-            letter-spacing: 0.01em;
-        }
-        .role {
-            color: #888;
-            font-size: 1.25em;
-            font-weight: 500;
-            margin-bottom: 22px;
-            letter-spacing: 0.01em;
-        }
-        .description {
-            color: #111;
-            font-size: 1.08em;
-            line-height: 1.7;
+
+        .sidebar .role {
+            font-size: 1.1em;
             font-weight: 400;
-            margin-bottom: 0;
+            color: #6c757d; /* Muted color for role */
+            margin-bottom: 25px;
         }
-        .projects-column {
-            flex: 1;
+
+        .sidebar .description {
+            font-size: 0.9em;
+            line-height: 1.6;
+            color: #495057;
+            margin-bottom: 30px;
+        }
+
+        .sidebar .social-links a {
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 1.5em; /* Make icon larger */
+            margin-right: 15px; /* Space if adding more icons */
+        }
+        .sidebar .social-links a:hover {
+            color: #007bff; /* Highlight color on hover */
+        }
+
+         .sidebar-nav {
+            margin-top: auto; /* Pushes nav to the bottom */
+         }
+
+        .sidebar-nav a {
+            display: block;
+            text-decoration: none;
+            color: #495057;
+            font-size: 0.95em;
+            padding: 8px 0;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .sidebar-nav a:hover {
+            color: #007bff;
+        }
+
+        /* Hide default nav from original code */
+        /* nav { display: none; } */
+
+        .content-area {
+            flex-grow: 1; /* Allows content area to take remaining space */
+            padding: 40px 50px;
+            overflow-y: auto; /* Allow scrolling within the content area */
+        }
+
+        .projects-grid {
             display: flex;
-            flex-wrap: wrap; /* Allow items to wrap to the next line */
-            justify-content: space-around; /* Distribute items evenly */
-            padding-left: 40px;
+            flex-wrap: wrap;
+            gap: 40px; /* Spacing between project cards */
         }
+
         .project-card {
-            background: #f2f5fa;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(120,150,185,0.06);
-            padding: 10px; /* Reduced padding */
-            text-align: center;
-            margin-bottom: 20px; /* Reduced margin */
-            width: 45%;
-            box-sizing: border-box;
+            background: #ffffff; /* White background for cards */
+            /* Remove border/shadow unless desired */
+            /* border: 1px solid #e9ecef; */
+            /* box-shadow: 0 2px 5px rgba(0,0,0,0.05); */
+            border-radius: 8px; /* Optional rounded corners */
+            width: calc(50% - 20px); /* Two columns layout, accounting for gap */
+            margin-bottom: 20px; /* Space below cards if they wrap */
+            text-align: left; /* Align text to the left */
         }
+
         .project-image {
             width: 100%;
-            height: 160px; /* Reduced height */
-            border-radius: 8px;
-            margin-bottom: 5px; /* Reduced margin */
-            overflow: hidden;
+            /* height: auto; Removed fixed height */
+            border-radius: 8px 8px 0 0; /* Rounded corners only on top if desired */
+            margin-bottom: 15px; /* Space between image and text */
+            overflow: hidden; /* Ensures image stays within bounds */
+            background-color: #e9ecef; /* Placeholder background for image area */
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
         }
+
         .project-image img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+            display: block; /* Remove extra space below image */
+            width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            max-width: 100%; /* Ensure image is not wider than container */
+             /* object-fit: cover; /* Cover the area, might crop */
+             object-fit: contain; /* Ensure whole image is visible */
+             max-height: 350px; /* Limit image height if needed */
         }
+
+        .project-info {
+             padding: 0px 10px 20px 10px; /* Padding for text below image */
+        }
+
+
         .project-title {
-            font-size: 1em; /* Reduced font size */
+            font-size: 1.1em;
             font-weight: 600;
             color: #333;
-            margin-bottom: 3px; /* Reduced margin */
+            margin-bottom: 5px;
         }
+
         .project-desc {
-            font-size: 0.8em; /* Reduced font size */
-            color: #888;
+            font-size: 0.9em;
+            color: #6c757d;
+            line-height: 1.5;
         }
-        footer {
-            background: #f2f5fa;
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid #ddd;
-            font-size: 1em;
-            color: #555;
-        }
-        footer a {
-            color: #555;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        footer a:hover {
-            color: #000;
-            text-decoration: underline;
-        }
-        @media (max-width: 768px) {
-            .main-content {
-                flex-direction: column;
-                padding: 20px 15px 0;
-            }
-            .left-column {
-                width: 100%;
-                margin-bottom: 20px;
-            }
-            .projects-column {
-                flex-direction: column;
-                padding-left: 0;
-            }
+
+        /* Hide original footer */
+        /* footer { display: none; } */
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
             .project-card {
-                width: 100%;
+                width: 100%; /* Stack projects on smaller screens */
+                margin-bottom: 30px;
+            }
+            .content-area {
+                padding: 30px;
             }
         }
+
+
+        @media (max-width: 768px) {
+            .portfolio-container {
+                flex-direction: column; /* Stack sidebar and content */
+            }
+
+            .sidebar {
+                width: 100%; /* Full width */
+                height: auto; /* Auto height */
+                position: static; /* Remove sticky positioning */
+                border-right: none;
+                border-bottom: 1px solid #e9ecef;
+                padding: 30px 20px;
+            }
+
+             .sidebar-nav {
+                 margin-top: 20px; /* Adjust spacing */
+                 display: flex; /* Horizontal links */
+                 flex-wrap: wrap;
+                 gap: 15px;
+             }
+             .sidebar-nav a {
+                 padding: 5px 0;
+                 margin-bottom: 0;
+             }
+
+            .content-area {
+                padding: 30px 20px;
+            }
+
+             .project-card {
+                width: 100%; /* Ensure full width */
+             }
+        }
+
     </style>
 </head>
 <body>
-    <div class="site-wrapper">
-        <nav>
-            <a href="index.html" class="nav-brand">Joanna Lee</a>
-            <div class="nav-links">
-                <a href="market-research.html">MARKET RESEARCH</a>
-                <a href="social-media-marketing.html">UX/UI</a>
-            </div>
-        </nav>
-        <div class="main-content">
-            <div class="left-column">
+    <div class="portfolio-container">
+        <aside class="sidebar">
+            <div class="sidebar-content">
                 <div class="name">Joanna Lee</div>
                 <div class="role">UX/UI Designer</div>
                 <div class="description">
                     I have a strong foundation in UX/UI as a student at UMGC. I strive to demonstrate my expertise in creating user-centered accessible designs that align with business goals. My designs highlight my skills in user research, visual design, and functional prototyping.
                 </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/joanna-lee-jdlee/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    </div>
             </div>
-            <div class="projects-column">
+            <nav class="sidebar-nav">
+                 <a href="#about">About Me</a> <a href="#ux-ui">UX/UI Design</a> <a href="#marketing">Marketing</a> </nav>
+        </aside>
+
+        <main class="content-area">
+            <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="1Brick-Executive.png">
+                        <img src="1Brick-Executive.png" alt="Campfire Travel Project Screenshot" style="background-color:#ccc; min-height: 200px;">
                     </div>
-                    <div class="project-title">Brick Executive</div>
-                    <div class="project-desc">Internship</div>
+                    <div class="project-info">
+                        <div class="project-title">Campfire Travel</div> <div class="project-desc">CMST 325 Fundamentals of Digital Design</div> </div>
                 </div>
+
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="image2.jpg" alt="Berkshire Hathaway">
+                         <img src="image2.jpg" alt="Berkshire Hathaway Project Screenshot" style="background-color:#ccc; min-height: 200px;">
                     </div>
-                    <div class="project-title">Berkshire Hathaway</div>
-                    <div class="project-desc">CMST 308 User Experience and Interface Design</div>
+                     <div class="project-info">
+                        <div class="project-title">Berkshire Hathaway</div>
+                        <div class="project-desc">CMST 308 User Experience and Interface Design</div>
+                     </div>
                 </div>
-            </div>
-        </div>
-        <footer>
-            <div>jdlee6526@gmail.com</div>
-            <div>
-                <a href="https://www.linkedin.com/in/joanna-lee-jdlee/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </div>
-        </footer>
+
+                 </div>
+        </main>
     </div>
-</body>
+    </body>
 </html>

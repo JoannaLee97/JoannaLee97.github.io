@@ -70,7 +70,7 @@
         /* Main Content Area */
         main {
             padding: 30px 40px;
-            background-color: #e2ebf5; /* Changed background back to white for content area */
+            background-color: #fff; /* Changed background back to white for content area */
             width: 80%;
             max-width: 1200px;
             margin-top: 20px;
@@ -180,30 +180,9 @@
 
         /* Role & Image Section */
         .role-image-section {
-            /* display: flex; */ /* Keep commented if using HTML stacking */
-            /* align-items: flex-start; */
-            /* gap: 40px; */
             margin-top: 40px;
             padding-bottom: 20px;
         }
-        .role-description {
-             /* flex: 3; */ /* Keep commented if using HTML stacking */
-        }
-        .role-image {
-            /* text-align: center; */ /* Centering handled differently now */
-             margin-top: 30px; /* Increased space between list and image */
-             text-align: left; /* Align image container left */
-        }
-        .role-image img {
-             max-width: 100%; /* Allow image to scale */
-             /* Consider a specific max-width if needed e.g., max-width: 600px; */
-             height: auto;
-             display: block; /* Prevents extra space */
-             border-radius: 8px;
-             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-             /* margin: 0 auto; /* Removed auto margin */
-             margin-left: 0; /* Explicitly align left */
-         }
         .role-description h2 {
             font-size: 1.6em;
             font-weight: 600;
@@ -223,48 +202,71 @@
             margin-bottom: 15px;
             line-height: 1.7;
         }
-
-        /* --- NEW Content Sections Styling --- */
-        .content-section {
-            margin-top: 40px; /* Space above each new section */
-            padding-bottom: 10px; /* Small space at the bottom */
+         .role-image {
+             margin-top: 30px;
+             text-align: left;
         }
+        .role-image img {
+             max-width: 100%;
+             height: auto;
+             display: block;
+             border-radius: 8px;
+             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+             margin-left: 0;
+         }
 
+        /* Content Sections Styling */
+        .content-section {
+            margin-top: 40px;
+            padding-bottom: 10px;
+        }
         .content-section h2 {
-            /* Match .role-description h2 style */
             font-size: 1.6em;
             font-weight: 600;
             color: #333;
             margin-top: 0;
             margin-bottom: 20px;
-            border-bottom: 2px solid #eef3f9; /* Consistent underline */
+            border-bottom: 2px solid #eef3f9;
             padding-bottom: 8px;
         }
-
         .content-section p,
         .content-section ul {
-            margin: 0 0 15px 0; /* Bottom margin for spacing, reset top */
-            padding-left: 0; /* Reset padding for p */
+            margin: 0 0 15px 0;
+            padding-left: 0;
             color: #555;
-            line-height: 1.7; /* Consistent line height */
-            font-size: 1em; /* Consistent font size */
+            line-height: 1.7;
+            font-size: 1em;
         }
-
         .content-section ul {
             list-style-type: disc;
-            padding-left: 25px; /* Indentation for bullets */
+            padding-left: 25px;
         }
-
         .content-section li {
-            margin-bottom: 10px; /* Space between list items */
+            margin-bottom: 10px;
+        }
+        .usability-testing li strong {
+             font-weight: 600;
+             color: #444;
         }
 
-         /* Specific styling for usability testing list */
-        .usability-testing li strong {
-             font-weight: 600; /* Default bold is fine */
-             color: #444; /* Slightly darker emphasis */
+        /* --- NEW Image Gallery Section Styling --- */
+        .image-gallery-section {
+            display: flex;
+            gap: 20px; /* Space between images */
+            margin-top: 40px; /* Space above the gallery */
+            align-items: flex-start; /* Align tops if heights differ */
         }
-        /* --- END NEW Content Sections Styling --- */
+        .image-gallery-column {
+            flex: 1; /* Equal width for each column */
+        }
+        .image-gallery-column img {
+            max-width: 100%; /* Make image responsive */
+            height: auto; /* Maintain aspect ratio */
+            display: block; /* Remove extra space below image */
+            border-radius: 8px; /* Consistent styling */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Consistent styling */
+        }
+        /* --- END NEW Image Gallery Section Styling --- */
 
 
         /* Consistent Footer Styles */
@@ -351,17 +353,21 @@
             }
 
             /* Responsive Role & Image Section */
-            .role-image-section {
-                  margin-top: 30px;
-            }
-            .role-image { margin-top: 20px; /* Adjust space on mobile */ }
-            .role-image img { /* Optional: Make image smaller on mobile */ max-width: 90%; }
-
+            .role-image-section { margin-top: 30px; }
+            .role-image { margin-top: 20px; }
+            .role-image img { max-width: 90%; }
 
             /* Responsive Content Sections */
              .content-section h2 { font-size: 1.4em; margin-bottom: 15px; }
              .content-section p, .content-section ul { line-height: 1.6; }
 
+            /* --- Responsive Image Gallery --- */
+            .image-gallery-section {
+                 flex-direction: column; /* Stack images */
+                 gap: 25px; /* Adjust vertical gap */
+                 margin-top: 30px;
+            }
+             /* --- END Responsive Image Gallery --- */
 
             .footer-container {
                  flex-direction: column; align-items: center;
@@ -391,12 +397,11 @@
             </a>
 
             <div class="project-header">
-                <div class="project-header-text">
+                 <div class="project-header-text">
                     <h1 class="project-title">Berkshire Hathaway</h1>
                     <p class="project-subtitle">CMST 308 User Experience and Interface Design</p>
                 </div>
-                <img src="Home-Berkshire-Hathaway.jpg" alt="Berkshire Hathaway Project Mockup">
-            </div>
+                <img src="Home-Berkshire-Hathaway.jpg" alt="Berkshire Hathaway Project Mockup"> </div>
 
             <div class="overview-goal">
                 <div class="overview-section">
@@ -425,7 +430,7 @@
             </div>
 
             <div class="role-image-section">
-                <div class="role-description">
+                 <div class="role-description">
                     <h2>My Role</h2>
                     <ul>
                         <li>Analyze the usability of the existing Berkshire Hathaway website and propose a redesigned interface that prioritizes clarity, accessibility, and a modern aesthetic.</li>
@@ -433,13 +438,12 @@
                         <li>Design solutions for specific issues such as the lack of error messages, limited search functionality, and the absence of a help/FAQ section to enhance overall user satisfaction.</li>
                     </ul>
                     <div class="role-image">
-                         <img src="Original-Website-Berkshire.jpg" alt="Original Berkshire Hathaway Website Screenshot">
-                    </div>
+                        <img src="Original-Website-Berkshire.jpg" alt="Original Berkshire Hathaway Website Screenshot"> </div>
                 </div>
             </div>
 
             <div class="content-section personas-test-plan">
-                <h2>Create Personas & Usability Test Plan</h2>
+                 <h2>Create Personas & Usability Test Plan</h2>
                 <ul>
                     <li>Develop user personas with specific goals and challenges when accessing the Berkshire Hathaway website and a test plan for testing its usability.</li>
                     <li>Participants performed tasks (finding annual reports, shareholder letters) and rated satisfaction (1-5 scale) based on specific usability criteria.</li>
@@ -447,7 +451,7 @@
             </div>
 
             <div class="content-section usability-testing">
-                <h2>Usability Testing</h2>
+                 <h2>Usability Testing</h2>
                 <p>A mixed-methods approach was employed, leveraging both quantitative and qualitative metrics to comprehensively evaluate the Berkshire Hathaway website's usability.</p>
                 <ul>
                     <li><strong>Quantitative Metrics:</strong> Task success rates, completion times, and satisfaction scores (using a 5-point Likert scale) were collected to measure task efficiency and user satisfaction.</li>
@@ -456,7 +460,7 @@
             </div>
 
             <div class="content-section focus-areas">
-                <h2>Focus</h2>
+                 <h2>Focus</h2>
                 <ul>
                     <li>How easily users could locate and access key information, such as annual reports and shareholder letters.</li>
                     <li>The effectiveness of the website's navigation menu, search functionality, and overall information organization.</li>
@@ -465,11 +469,22 @@
                 </ul>
             </div>
 
+            <div class="image-gallery-section">
+                <div class="image-gallery-column">
+                     <img src="News-Berkshire.png">
+                </div>
+                <div class="image-gallery-column">
+                     <img src="Sustainability-Berkshire.png">
+                </div>
+                <div class="image-gallery-column">
+                     <img src="Documents-Berkshire.png">
+                </div>
+            </div>
             </main>
     </div>
 
     <footer>
-        <div class="footer-container">
+         <div class="footer-container">
             <div>jdlee6526@gmail.com</div>
             <div>
                 <a href="https://www.linkedin.com/in/joanna-lee-jdlee/" target="_blank" rel="noopener noreferrer">LinkedIn</a>

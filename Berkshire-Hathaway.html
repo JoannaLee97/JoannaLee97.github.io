@@ -24,25 +24,23 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center content horizontally */
         }
-        .site-wrapper {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            width: 80%; /* Limit width for better readability */
-            max-width: 1200px; /* Set a maximum width */
-            margin: 0 auto; /* Center the content */
-        }
+
         /* Consistent Navigation Bar Styles */
         nav {
             background: #e2ebf5;
-            padding: 15px 40px;
+            padding: 15px 0; /* Vertical padding, horizontal handled by container */
+            border-bottom: 1px solid #ddd;
+            width: 100%; /* Span full width */
+            flex-shrink: 0;
+        }
+        .nav-container {
+            width: 80%; /* Limit content width */
+            max-width: 1200px; /* Match main content max-width */
+            margin: 0 auto; /* Center the content */
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid #ddd;
-            flex-shrink: 0;
         }
         .nav-brand {
             font-size: 1.5em;
@@ -62,11 +60,25 @@
         .nav-links a:hover {
             color: #000;
         }
+
+        /* Content Wrapper */
+        .site-wrapper {
+            flex: 1; /* Allows main content to push footer down */
+            display: flex; /* Needed for flex item (main) */
+            flex-direction: column; /* Stack children vertically */
+            width: 100%; /* Take full width available */
+            align-items: center; /* Center the main content area */
+        }
+
         /* Main Content Area */
         main {
-            flex: 1;
-            padding: 20px;
+           /* Removed flex: 1; - handled by site-wrapper */
+            padding: 20px; /* Keep inner margin */
             background-color: #fff;
+            width: 80%; /* Limit width */
+            max-width: 1200px; /* Set a maximum width */
+            margin-top: 20px; /* Optional: Add space below nav */
+            margin-bottom: 20px; /* Optional: Add space above footer */
         }
         .back-link {
             display: block;
@@ -102,51 +114,62 @@
         .overview-goal {
             display: flex;
             justify-content: space-between;
+            gap: 30px; /* Added gap for spacing */
         }
-        .overview-section {
-            width: 48%;
+        .overview-section, .goal-section { /* Target both sections */
+           flex: 1; /* Make sections equal width */
+           /* Removed width: 48% */
         }
         .overview-title, .goal-title {
             font-size: 1.3em;
             margin-bottom: 10px;
+            color: #333; /* Ensure title color is distinct */
         }
         .overview-desc, .goal-desc {
             font-size: 1em;
             line-height: 1.6;
-            color: #444;
+            color: #777; /* Changed to grey */
         }
+
         /* Consistent Footer Styles */
         footer {
             background: #f2f5fa;
-            padding: 15px 40px;
+            padding: 15px 0; /* Vertical padding, horizontal handled by container */
+            border-top: 1px solid #ddd;
+            width: 100%; /* Span full width */
+            flex-shrink: 0;
+            margin-top: auto; /* Push footer to bottom if content is short */
+        }
+         .footer-container {
+            width: 80%; /* Limit content width */
+            max-width: 1200px; /* Match main content max-width */
+            margin: 0 auto; /* Center the content */
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-top: 1px solid #ddd;
             font-size: 1em;
             color: #555;
-            flex-shrink: 0;
-            width: 100%; /* Ensure footer takes the full width */
-            max-width: 1200px; /* Match the main content's max width */
-            margin: 0 auto; /* Center the footer */
         }
-        footer a {
+        .footer-container a { /* Target links inside container */
             color: #555;
             text-decoration: none;
             font-weight: 500;
         }
-        footer a:hover {
+        .footer-container a:hover { /* Target links inside container */
             color: #000;
             text-decoration: underline;
         }
+
         /* Responsive Layout */
         @media (max-width: 768px) {
-            .site-wrapper {
-                width: 95%;
-                padding: 10px;
+            .nav-container, .footer-container, main {
+                width: 95%; /* Use more screen width on smaller devices */
             }
             nav {
-                padding: 10px 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+             .nav-container {
                 flex-direction: column;
                 align-items: flex-start;
             }
@@ -154,14 +177,19 @@
                 margin-bottom: 10px;
             }
             .nav-links {
-                margin-left: 0;
-                display: flex;
-                flex-wrap: wrap;
-                gap: 15px;
+                 margin-left: 0;
+                 display: flex;
+                 flex-direction: column; /* Stack links vertically */
+                 align-items: flex-start; /* Align links left */
+                 gap: 10px; /* Space between stacked links */
+                 width: 100%; /* Ensure links container takes width */
             }
-            .main-content {
-                padding: 20px;
-            }
+             .nav-links a {
+                 margin-left: 0; /* Remove left margin */
+             }
+            main {
+                 padding: 15px; /* Adjust padding */
+             }
             .project-header {
                 flex-direction: column;
                 align-items: flex-start;
@@ -172,17 +200,26 @@
             }
             .overview-goal {
                 flex-direction: column;
+                gap: 20px; /* Adjust gap for vertical layout */
             }
             .overview-section, .goal-section {
-                width: 100%;
-                margin-bottom: 20px;
+                width: 100%; /* Sections take full width when stacked */
+                 margin-bottom: 0; /* Remove bottom margin if gap is used */
+                 /* flex: 1 is not needed when direction is column */
+            }
+            .footer-container {
+                 flex-direction: column;
+                 align-items: center; /* Center footer content */
+                 gap: 10px; /* Add gap for stacked items */
+                 text-align: center;
             }
         }
     </style>
 </head>
 <body>
-    <div class="site-wrapper">
-        <nav>
+
+    <nav>
+        <div class="nav-container">
             <a href="index.html" class="nav-brand">Joanna Lee</a>
             <div class="nav-links">
                 <a href="index.html">HOME</a>
@@ -190,17 +227,22 @@
                 <a href="social-media-marketing.html">SOCIAL MEDIA MARKETING</a>
                 <a href="ux-ui.html">UX/UI</a>
             </div>
-        </nav>
+        </div>
+    </nav>
+
+    <div class="site-wrapper">
         <main class="content-area">
             <a href="ux-ui.html" class="back-link">
                 <i class="fas fa-arrow-left"></i> Back to Case Studies
             </a>
             <h1 class="project-title">Berkshire Hathaway</h1>
             <p class="project-subtitle">CMST 308 User Experience and Interface Design</p>
+
             <div class="project-header">
                 <div></div>
                 <img src="Home-Berkshire-Hathaway.jpg" alt="Berkshire Hathaway Project Image">
             </div>
+
             <div class="overview-goal">
                 <div class="overview-section">
                     <h2 class="overview-title">Overview</h2>
@@ -212,12 +254,16 @@
                 </div>
             </div>
         </main>
-        <footer>
+    </div>
+
+    <footer>
+        <div class="footer-container">
             <div>jdlee6526@gmail.com</div>
             <div>
                 <a href="https://www.linkedin.com/in/joanna-lee-jdlee/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
-        </footer>
-    </div>
+        </div>
+    </footer>
+
 </body>
 </html>

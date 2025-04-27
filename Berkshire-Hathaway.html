@@ -1,1 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joanna Lee - UX/UI Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Core structure styles */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+        body {
+            background-color: #e2ebf5;
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .site-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Consistent Navigation Bar Styles */
+        nav {
+            background: #e2ebf5;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ddd;
+            flex-shrink: 0;
+        }
+        .nav-brand {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+        .nav-links a {
+            margin-left: 40px;
+            text-decoration: none;
+            color: #555;
+            font-size: 1em;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .nav-links a:hover {
+            color: #000;
+        }
+
+        /* Main Layout Container (Sidebar + Content) */
+        .portfolio-container {
+            display: flex;
+            flex: 1;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 280px;
+            flex-shrink: 0;
+            background-color: #f2f5fa;
+            padding: 40px 30px;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #e9ecef;
+            overflow-y: auto;
+        }
+
+        .sidebar-content {
+             flex-grow: 1;
+        }
+        .sidebar .name {
+            font-size: 1.8em;
+            font-weight: 600;
+            color: #343a40;
+            margin-bottom: 5px;
+        }
+        .sidebar .role {
+            font-size: 1.1em;
+            font-weight: 400;
+            color: #6c757d;
+            margin-bottom: 25px;
+        }
+        .sidebar .description {
+            font-size: 0.9em;
+            line-height: 1.6;
+            color: #495057;
+            margin-bottom: 30px;
+        }
+        .sidebar .social-links {
+             display: flex;
+             justify-content: center;
+             align-items: center;
+             flex-wrap: wrap;
+             gap: 10px;
+        }
+        .sidebar .social-links a {
+            color: #6c757d;
+            text-decoration: none;
+            font-size: 1.2em;
+            display: inline-flex;
+            align-items: center;
+            line-height: 1;
+        }
+        .sidebar .social-links a i {
+            font-size: 1.5em;
+        }
+        .sidebar .social-links a.resume-link {
+             font-size: 0.9em;
+             font-weight: 500;
+             padding: 5px 10px;
+             border: 1px solid #ced4da;
+             border-radius: 4px;
+             background-color: #e9ecef;
+        }
+         .sidebar .social-links a.resume-link i {
+             font-size: 1em;
+             margin-left: 5px;
+             margin-right: 0;
+         }
+        .sidebar .social-links a:hover {
+            color: #007bff;
+        }
+        .sidebar .social-links a.resume-link:hover {
+            background-color: #dee2e6;
+            border-color: #adb5bd;
+        }
 

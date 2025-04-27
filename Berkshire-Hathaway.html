@@ -48,17 +48,16 @@
             color: #333;
             text-decoration: none;
         }
+        /* Ensure nav link styles match home page */
         .nav-links a {
             margin-left: 40px;
             text-decoration: none;
-            color: #555;
-            font-size: 1em;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            color: #555; /* Match home page color */
+            font-size: 1em; /* Match home page size */
+             /* Removed font-weight, text-transform, letter-spacing from previous version if they differed */
         }
         .nav-links a:hover {
-            color: #000;
+            color: #000; /* Match home page hover */
         }
 
         /* Content Wrapper */
@@ -74,7 +73,7 @@
         main {
            /* Removed flex: 1; - handled by site-wrapper */
             padding: 20px; /* Keep inner margin */
-            background-color: #e2ebf5;
+            background-color: #fff;
             width: 80%; /* Limit width */
             max-width: 1200px; /* Set a maximum width */
             margin-top: 20px; /* Optional: Add space below nav */
@@ -90,7 +89,7 @@
             margin-right: 5px;
         }
 
-        /* MODIFIED SECTION START */
+        /* Project Header Styles */
         .project-header {
             display: flex;
             align-items: center; /* Vertically align items */
@@ -108,50 +107,47 @@
             font-weight: bold;
             margin-bottom: 5px;
             color: #333;
-            /* Removed margin-bottom if previously applied specifically here */
         }
         .project-subtitle {
             font-size: 1.1em;
             color: #777;
-             margin-bottom: 0; /* Remove bottom margin if title/subtitle block handles spacing */
-            /* Removed margin-bottom if previously applied specifically here */
+             margin-bottom: 0;
         }
         .project-header img {
-            max-width: 45%; /* Keep image size constrained */
+            max-width: 45%;
             height: auto;
             border-radius: 8px;
-            display: block; /* Good practice for images in flex */
+            display: block;
         }
-        /* MODIFIED SECTION END */
 
+        /* Overview/Goal Section */
         .overview-goal {
             display: flex;
             justify-content: space-between;
-            gap: 30px; /* Added gap for spacing */
+            gap: 30px;
         }
-        .overview-section, .goal-section { /* Target both sections */
-           flex: 1; /* Make sections equal width */
-           /* Removed width: 48% */
+        .overview-section, .goal-section {
+           flex: 1;
         }
         .overview-title, .goal-title {
             font-size: 1.3em;
             margin-bottom: 10px;
-            color: #333; /* Ensure title color is distinct */
+            color: #333;
         }
         .overview-desc, .goal-desc {
             font-size: 1em;
             line-height: 1.6;
-            color: #777; /* Changed to grey */
+            color: #777;
         }
 
         /* Consistent Footer Styles */
         footer {
-            background: #f2f5fa;
+            background: #f2f5fa; /* Match home page background */
             padding: 15px 0; /* Vertical padding, horizontal handled by container */
-            border-top: 1px solid #ddd;
+            border-top: 1px solid #ddd; /* Match home page border */
             width: 100%; /* Span full width */
             flex-shrink: 0;
-            margin-top: auto; /* Push footer to bottom if content is short */
+            margin-top: auto;
         }
          .footer-container {
             width: 80%; /* Limit content width */
@@ -160,23 +156,24 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 1em;
-            color: #555;
+            font-size: 1em; /* Match home page size */
+            color: #555; /* Match home page color */
         }
-        .footer-container a { /* Target links inside container */
-            color: #555;
-            text-decoration: none;
-            font-weight: 500;
+        /* Ensure footer link styles match home page */
+        .footer-container a {
+            color: #555; /* Match home page color */
+            text-decoration: none; /* Match home page decoration */
+            font-weight: 500; /* Match home page weight */
         }
-        .footer-container a:hover { /* Target links inside container */
-            color: #000;
-            text-decoration: underline;
+        .footer-container a:hover {
+            color: #000; /* Match home page hover color */
+            text-decoration: underline; /* Match home page hover decoration */
         }
 
         /* Responsive Layout */
         @media (max-width: 768px) {
             .nav-container, .footer-container, main {
-                width: 95%; /* Use more screen width on smaller devices */
+                width: 95%;
             }
             nav {
                 padding-top: 10px;
@@ -192,47 +189,44 @@
             .nav-links {
                  margin-left: 0;
                  display: flex;
-                 flex-direction: column; /* Stack links vertically */
-                 align-items: flex-start; /* Align links left */
-                 gap: 10px; /* Space between stacked links */
-                 width: 100%; /* Ensure links container takes width */
+                 flex-direction: column;
+                 align-items: flex-start;
+                 gap: 10px;
+                 width: 100%;
             }
              .nav-links a {
-                 margin-left: 0; /* Remove left margin */
+                 margin-left: 0;
              }
             main {
-                 padding: 15px; /* Adjust padding */
+                 padding: 15px;
              }
 
-            /* Responsive project header */
+             /* Responsive project header */
              .project-header {
-                 flex-direction: column; /* Stack title/text and image vertically */
-                 align-items: flex-start; /* Align items to the start */
+                 flex-direction: column;
+                 align-items: flex-start;
              }
              .project-header-text {
-                  /* Adjust text block for stacked layout if needed */
-                  margin-bottom: 20px; /* Add space between text and image */
-                  flex-basis: auto; /* Reset basis */
+                  margin-bottom: 20px;
+                  flex-basis: auto;
              }
              .project-header img {
-                 max-width: 100%; /* Allow image to take full width */
-                 /* Removed margin-top if set previously */
+                 max-width: 100%;
              }
-            /* End Responsive project header */
+             /* End Responsive project header */
 
             .overview-goal {
                 flex-direction: column;
-                gap: 20px; /* Adjust gap for vertical layout */
+                gap: 20px;
             }
             .overview-section, .goal-section {
-                width: 100%; /* Sections take full width when stacked */
-                 margin-bottom: 0; /* Remove bottom margin if gap is used */
-                 /* flex: 1 is not needed when direction is column */
+                width: 100%;
+                 margin-bottom: 0;
             }
             .footer-container {
                  flex-direction: column;
-                 align-items: center; /* Center footer content */
-                 gap: 10px; /* Add gap for stacked items */
+                 align-items: center;
+                 gap: 10px;
                  text-align: center;
             }
         }
@@ -259,11 +253,13 @@
             </a>
 
             <div class="project-header">
-                <div class="project-header-text"> <h1 class="project-title">Berkshire Hathaway</h1>
+                <div class="project-header-text">
+                    <h1 class="project-title">Berkshire Hathaway</h1>
                     <p class="project-subtitle">CMST 308 User Experience and Interface Design</p>
                 </div>
                 <img src="Home-Berkshire-Hathaway.jpg" alt="Berkshire Hathaway Project Image">
             </div>
+
             <div class="overview-goal">
                 <div class="overview-section">
                     <h2 class="overview-title">Overview</h2>

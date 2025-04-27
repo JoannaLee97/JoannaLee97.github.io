@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joanna Lee - UX/UI Portfolio</title>
+    <title>Berkshire Hathaway</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -24,14 +24,16 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            align-items: center; /* Center content horizontally */
         }
         .site-wrapper {
             flex: 1;
             display: flex;
             flex-direction: column;
-            overflow: hidden;
+            width: 80%; /* Limit width for better readability */
+            max-width: 1200px; /* Set a maximum width */
+            margin: 0 auto; /* Center the content */
         }
-
         /* Consistent Navigation Bar Styles */
         nav {
             background: #e2ebf5;
@@ -60,85 +62,58 @@
         .nav-links a:hover {
             color: #000;
         }
-
-        /* Main Layout Container (Sidebar + Content) */
-        .portfolio-container {
-            display: flex;
+        /* Main Content Area */
+        main {
             flex: 1;
-            width: 100%;
-            overflow: hidden;
+            padding: 20px;
+            background-color: #fff;
         }
-
-        /* Sidebar Styles */
-        .sidebar {
-            width: 280px;
-            flex-shrink: 0;
-            background-color: #f2f5fa;
-            padding: 40px 30px;
-            display: flex;
-            flex-direction: column;
-            border-right: 1px solid #e9ecef;
-            overflow-y: auto;
+        .back-link {
+            display: block;
+            margin-bottom: 20px;
+            color: #555;
+            text-decoration: none;
         }
-
-        .sidebar-content {
-             flex-grow: 1;
+        .back-link i {
+            margin-right: 5px;
         }
-        .sidebar .name {
-            font-size: 1.8em;
-            font-weight: 600;
-            color: #343a40;
+        .project-title {
+            font-size: 2.5em;
+            font-weight: bold;
             margin-bottom: 5px;
+            color: #333;
         }
-        .sidebar .role {
+        .project-subtitle {
             font-size: 1.1em;
-            font-weight: 400;
-            color: #6c757d;
-            margin-bottom: 25px;
+            color: #777;
+            margin-bottom: 20px;
         }
-        .sidebar .description {
-            font-size: 0.9em;
-            line-height: 1.6;
-            color: #495057;
+        .project-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             margin-bottom: 30px;
         }
-        .sidebar .social-links {
-             display: flex;
-             justify-content: center;
-             align-items: center;
-             flex-wrap: wrap;
-             gap: 10px;
+        .project-header img {
+            max-width: 45%;
+            height: auto;
+            border-radius: 8px;
         }
-        .sidebar .social-links a {
-            color: #6c757d;
-            text-decoration: none;
-            font-size: 1.2em;
-            display: inline-flex;
-            align-items: center;
-            line-height: 1;
+        .overview-goal {
+            display: flex;
+            justify-content: space-between;
         }
-        .sidebar .social-links a i {
-            font-size: 1.5em;
+        .overview-section {
+            width: 48%;
         }
-        .sidebar .social-links a.resume-link {
-             font-size: 0.9em;
-             font-weight: 500;
-             padding: 5px 10px;
-             border: 1px solid #ced4da;
-             border-radius: 4px;
-             background-color: #e9ecef;
+        .overview-title, .goal-title {
+            font-size: 1.3em;
+            margin-bottom: 10px;
         }
-         .sidebar .social-links a.resume-link i {
-             font-size: 1em;
-             margin-left: 5px;
-             margin-right: 0;
-         }
-        .sidebar .social-links a:hover {
-            color: #007bff;
-        }
-        .sidebar .social-links a.resume-link:hover {
-            background-color: #dee2e6;
-            border-color: #adb5bd;
+        .overview-desc, .goal-desc {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #444;
         }
         /* Consistent Footer Styles */
         footer {
@@ -151,6 +126,9 @@
             font-size: 1em;
             color: #555;
             flex-shrink: 0;
+            width: 100%; /* Ensure footer takes the full width */
+            max-width: 1200px; /* Match the main content's max width */
+            margin: 0 auto; /* Center the footer */
         }
         footer a {
             color: #555;
@@ -161,7 +139,46 @@
             color: #000;
             text-decoration: underline;
         }
- </style>
+        /* Responsive Layout */
+        @media (max-width: 768px) {
+            .site-wrapper {
+                width: 95%;
+                padding: 10px;
+            }
+            nav {
+                padding: 10px 20px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-brand {
+                margin-bottom: 10px;
+            }
+            .nav-links {
+                margin-left: 0;
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            .main-content {
+                padding: 20px;
+            }
+            .project-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .project-header img {
+                max-width: 100%;
+                margin-top: 20px;
+            }
+            .overview-goal {
+                flex-direction: column;
+            }
+            .overview-section, .goal-section {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="site-wrapper">
@@ -174,22 +191,27 @@
                 <a href="ux-ui.html">UX/UI</a>
             </div>
         </nav>
-      <div class="portfolio-container">
-            <aside class="sidebar">
-                <div class="sidebar-content">
-                    <div class="role" style="color: #7996B9; font-size: 24px; font-weight: bold;">UX/UI Designer</div>
-                    <div class="description">
-                        I have a strong foundation in UX/UI as a student at UMGC. I strive to demonstrate my expertise in creating user-centered accessible designs that align with business goals. My designs highlight my skills in user research, visual design, and functional prototyping.
-                    </div>
-                    <div class="social-links">
-                        <a href="https://drive.google.com/file/d/14bLZ4Ctbiae_hWwHmp58Lc_QXqbNk799/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Download Resume" class="resume-link" title="Download UX/UI Resume">
-                            Resume
-                            <i class="fas fa-download"></i>
-                        </a>
-                    </div>
+        <main class="content-area">
+            <a href="ux-ui.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Case Studies
+            </a>
+            <h1 class="project-title">Berkshire Hathaway</h1>
+            <p class="project-subtitle">CMST 308 User Experience and Interface Design</p>
+            <div class="project-header">
+                <div></div>
+                <img src="Home-Berkshire-Hathaway.jpg" alt="Berkshire Hathaway Project Image">
+            </div>
+            <div class="overview-goal">
+                <div class="overview-section">
+                    <h2 class="overview-title">Overview</h2>
+                    <p class="overview-desc">This project redesigned the Berkshire Hathaway website to enhance its usability and user experience. The existing site, characterized by a simple, text-heavy interface and stock HTML design, lacked key design elements and modern functionality. My role involved conducting user research, creating user personas, analyzing user needs and tasks, and identifying usability requirements. The redesign aimed to create a more accessible, intuitive, and visually appealing platform for users seeking information about Berkshire Hathaway.</p>
                 </div>
-            </aside>
-  </div>
+                <div class="goal-section">
+                    <h2 class="goal-title">Goal</h2>
+                    <p class="goal-desc">The primary goal of the redesign was to maintain the site's core objective of providing direct access to the company’s documents while improving its overall user-friendliness.</p>
+                </div>
+            </div>
+        </main>
         <footer>
             <div>jdlee6526@gmail.com</div>
             <div>

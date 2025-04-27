@@ -79,28 +79,36 @@
             margin-bottom: 0;
         }
         .projects-column {
-            background: #f2f5fa;
             flex: 1;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            justify-content: space-around; /* Distribute items evenly */
             padding-left: 40px;
+        }
+        .project-card {
+            background: #f2f5fa;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(120,150,185,0.06);
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 30px; /* Add space between each project */
+            width: 45%; /* Take up about half the container width (adjust as needed) */
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
         }
         .project-image {
             width: 100%;
-            height: 400px; /* Increased height */
-            background: #d7deea;
+            height: 260px; /* Increased height */
             border-radius: 8px;
             margin-bottom: 10px;
-            object-fit: cover;
+            overflow: hidden; /* Ensure image doesn't overflow */
             display: flex;
-            align-items: center; /* Vertically center content */
-            justify-content: center; /* Horizontally center content */
+            justify-content: center;
+            align-items: center;
         }
         .project-image img {
-            max-width: 100%; /* Ensure image doesn't exceed container */
-            max-height: 100%; /* Ensure image doesn't exceed container */
-            object-fit: contain; /* Maintain aspect ratio and fit within container */
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* Ensure entire image is visible */
         }
         .project-title {
             font-size: 1.1em;
@@ -141,8 +149,11 @@
                 margin-bottom: 20px;
             }
             .projects-column {
-                grid-template-columns: 1fr;
+                flex-direction: column;
                 padding-left: 0;
+            }
+            .project-card {
+                width: 100%;
             }
         }
     </style>
@@ -167,10 +178,10 @@
             <div class="projects-column">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="Brick-Executive.png" alt="Executive Search">
+                        <img src="image1.jpg" alt="Campfire Travel">
                     </div>
-                    <div class="project-title">Executive Search</div>
-                    <div class="project-desc">Internship</div>
+                    <div class="project-title">Campfire Travel</div>
+                    <div class="project-desc">CMST 295 Fundamentals of Digital Design</div>
                 </div>
                 <div class="project-card">
                     <div class="project-image">

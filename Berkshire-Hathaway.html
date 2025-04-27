@@ -30,6 +30,9 @@
             flex: 1;
             display: flex;
             flex-direction: column;
+            width: 80%; /* Limit width for better readability */
+            max-width: 1200px; /* Set a maximum width */
+            margin: 0 auto; /* Center the content */
         }
         /* Consistent Navigation Bar Styles */
         nav {
@@ -62,10 +65,8 @@
         /* Main Content Area */
         main {
             flex: 1;
-            padding: 30px; /* Added margin */
+            padding: 20px;
             background-color: #fff;
-            width: 80%; /* Limiting the width */
-            max-width: 1200px; /* Max width for the content area */
         }
         .back-link {
             display: block;
@@ -89,7 +90,7 @@
         }
         .project-header {
             display: flex;
-            align-items: flex-start; /* Align items to the top */
+            align-items: center;
             justify-content: space-between;
             margin-bottom: 30px;
         }
@@ -97,14 +98,13 @@
             max-width: 45%;
             height: auto;
             border-radius: 8px;
-            margin-top: -100px; /* Make the image higher */
         }
         .overview-goal {
             display: flex;
             justify-content: space-between;
         }
         .overview-section {
-            width: 48%; /* Make them equal */
+            width: 48%;
         }
         .overview-title, .goal-title {
             font-size: 1.3em;
@@ -126,6 +126,9 @@
             font-size: 1em;
             color: #555;
             flex-shrink: 0;
+            width: 100%; /* Ensure footer takes the full width */
+            max-width: 1200px; /* Match the main content's max width */
+            margin: 0 auto; /* Center the footer */
         }
         footer a {
             color: #555;

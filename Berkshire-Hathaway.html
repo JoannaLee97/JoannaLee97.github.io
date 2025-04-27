@@ -40,8 +40,6 @@
             align-items: center;
             border-bottom: 1px solid #ddd;
             flex-shrink: 0;
-            width: 100%; /* Footer full width */
-            max-width: 1200px; /* Match the main content's max width */
         }
         .nav-brand {
             font-size: 1.5em;
@@ -64,14 +62,10 @@
         /* Main Content Area */
         main {
             flex: 1;
-            width: 80%;
-            max-width: 1200px;
-            margin: 20px;
+            padding: 30px; /* Added margin */
             background-color: #fff;
-            box-sizing: border-box; /* Ensure padding is inside width */
-        }
-        .main-content {
-            padding: 20px; /* Margin for the main content */
+            width: 80%; /* Limiting the width */
+            max-width: 1200px; /* Max width for the content area */
         }
         .back-link {
             display: block;
@@ -95,7 +89,7 @@
         }
         .project-header {
             display: flex;
-            align-items: flex-start;
+            align-items: flex-start; /* Align items to the top */
             justify-content: space-between;
             margin-bottom: 30px;
         }
@@ -103,14 +97,14 @@
             max-width: 45%;
             height: auto;
             border-radius: 8px;
-            margin-top: -100px;
+            margin-top: -100px; /* Make the image higher */
         }
         .overview-goal {
             display: flex;
             justify-content: space-between;
         }
         .overview-section {
-            width: 48%;
+            width: 48%; /* Make them equal */
         }
         .overview-title, .goal-title {
             font-size: 1.3em;
@@ -132,8 +126,6 @@
             font-size: 1em;
             color: #555;
             flex-shrink: 0;
-            width: 100%; /* Footer full width */
-            max-width: 1200px; /* Match the main content's max width */
         }
         footer a {
             color: #555;
@@ -164,8 +156,8 @@
                 flex-wrap: wrap;
                 gap: 15px;
             }
-            main {
-                padding: 10px;
+            .main-content {
+                padding: 20px;
             }
             .project-header {
                 flex-direction: column;
@@ -196,26 +188,24 @@
                 <a href="ux-ui.html">UX/UI</a>
             </div>
         </nav>
-        <main>
-            <div class = "main-content">
-                <a href="ux-ui.html" class="back-link">
-                    <i class="fas fa-arrow-left"></i> Back to Case Studies
-                </a>
-                <h1 class="project-title">Berkshire Hathaway</h1>
-                <p class="project-subtitle">CMST 308 User Experience and Interface Design</p>
-                <div class="project-header">
-                    <div></div>
-                    <img src="Home-Berkshire-Hathaway.jpg" alt="Berkshire Hathaway Project Image">
+        <main class="content-area">
+            <a href="ux-ui.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Case Studies
+            </a>
+            <h1 class="project-title">Berkshire Hathaway</h1>
+            <p class="project-subtitle">CMST 308 User Experience and Interface Design</p>
+            <div class="project-header">
+                <div></div>
+                <img src="Home-Berkshire-Hathaway.jpg" alt="Berkshire Hathaway Project Image">
+            </div>
+            <div class="overview-goal">
+                <div class="overview-section">
+                    <h2 class="overview-title">Overview</h2>
+                    <p class="overview-desc">This project redesigned the Berkshire Hathaway website to enhance its usability and user experience. The existing site, characterized by a simple, text-heavy interface and stock HTML design, lacked key design elements and modern functionality. My role involved conducting user research, creating user personas, analyzing user needs and tasks, and identifying usability requirements. The redesign aimed to create a more accessible, intuitive, and visually appealing platform for users seeking information about Berkshire Hathaway.</p>
                 </div>
-                <div class="overview-goal">
-                    <div class="overview-section">
-                        <h2 class="overview-title">Overview</h2>
-                        <p class="overview-desc">This project redesigned the Berkshire Hathaway website to enhance its usability and user experience. The existing site, characterized by a simple, text-heavy interface and stock HTML design, lacked key design elements and modern functionality. My role involved conducting user research, creating user personas, analyzing user needs and tasks, and identifying usability requirements. The redesign aimed to create a more accessible, intuitive, and visually appealing platform for users seeking information about Berkshire Hathaway.</p>
-                    </div>
-                    <div class="goal-section">
-                        <h2 class="goal-title">Goal</h2>
-                        <p class="goal-desc">The primary goal of the redesign was to maintain the site's core objective of providing direct access to the company’s documents while improving its overall user-friendliness.</p>
-                    </div>
+                <div class="goal-section">
+                    <h2 class="goal-title">Goal</h2>
+                    <p class="goal-desc">The primary goal of the redesign was to maintain the site's core objective of providing direct access to the company’s documents while improving its overall user-friendliness.</p>
                 </div>
             </div>
         </main>

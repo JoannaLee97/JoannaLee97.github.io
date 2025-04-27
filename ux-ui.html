@@ -81,40 +81,44 @@
         .projects-column {
             flex: 1;
             display: flex;
-            flex-wrap: wrap; /* Allow items to wrap to the next line */
-            justify-content: space-around; /* Distribute items evenly */
+            flex-wrap: wrap;
+            justify-content: space-around;
             padding-left: 40px;
         }
         .project-card {
             background: #f2f5fa;
             border-radius: 12px;
             box-shadow: 0 2px 8px rgba(120,150,185,0.06);
-            padding: 0px;
-            text-align: center;
-            margin-bottom: 20px; /* Add space between each project */
-            width: 45%; /* Take up about half the container width (adjust as needed) */
-            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            margin-bottom: 20px;
+            width: 45%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column; /* Stack image, title, and description */
+            overflow: hidden; /* Ensure nothing sticks out */
         }
         .project-image {
             width: 100%;
-            height: 260px; /* Increased height */
+            height: auto; /* Adjust height automatically */
+            max-height: 260px; /* Set a maximum height */
             border-radius: 8px;
-            margin-bottom: 10px;
-            overflow: hidden; /* Ensure image doesn't overflow */
+            margin-bottom: 0; /* Remove space */
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
         }
         .project-image img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain; /* Ensure entire image is visible */
+            width: 100%; /* Make the image fill the width */
+            object-fit: cover; /* Cover the area, cropping if needed */
+        }
+        .project-info {
+            padding: 10px; /* Padding for the title and description */
         }
         .project-title {
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: 600;
             color: #333;
-            margin-bottom: 5px;
+            margin-bottom: 3px;
         }
         .project-desc {
             font-size: 0.9em;
@@ -164,8 +168,7 @@
             <a href="index.html" class="nav-brand">Joanna Lee</a>
             <div class="nav-links">
                 <a href="market-research.html">MARKET RESEARCH</a>
-                <a href="social-media-marketing.html">SOCIAL MEDIA MARKETING</a>
-                <a href="ux-ui.html">UX/UI</a>
+                <a href="social-media-marketing.html">UX/UI</a>
             </div>
         </nav>
         <div class="main-content">
@@ -179,17 +182,21 @@
             <div class="projects-column">
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="1Brick-Executive.png">
+                        <img src="image1.jpg" alt="Campfire Travel">
                     </div>
-                    <div class="project-title">Brick Executive</div>
-                    <div class="project-desc">Internship</div>
+                    <div class="project-info">
+                        <div class="project-title">Campfire Travel</div>
+                        <div class="project-desc">CMST 295 Fundamentals of Digital Design</div>
+                    </div>
                 </div>
                 <div class="project-card">
                     <div class="project-image">
                         <img src="image2.jpg" alt="Berkshire Hathaway">
                     </div>
-                    <div class="project-title">Berkshire Hathaway</div>
-                    <div class="project-desc">CMST 308 User Experience and Interface Design</div>
+                    <div class="project-info">
+                        <div class="project-title">Berkshire Hathaway</div>
+                        <div class="project-desc">CMST 308 User Experience and Interface Design</div>
+                    </div>
                 </div>
             </div>
         </div>

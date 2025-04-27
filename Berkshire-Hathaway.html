@@ -29,17 +29,19 @@
         /* Consistent Navigation Bar Styles */
         nav {
             background: #e2ebf5;
-            padding: 15px 0; /* Vertical padding, horizontal handled by container */
+            padding: 15px 0; /* Vertical padding ONLY */
             border-bottom: 1px solid #ddd;
-            width: 100%; /* Span full width */
+            width: 100%;
             flex-shrink: 0;
         }
+        /* --- MODIFIED NAV CONTAINER --- */
         .nav-container {
-            width: 80%; /* Limit content width */
-            max-width: 1200px; /* Match main content max-width */
-            margin: 0 auto; /* Center the content */
+            width: 100%; /* Span full width */
+            padding: 0 40px; /* Add horizontal padding for edge spacing */
+            box-sizing: border-box; /* Include padding in width */
+            /* Removed max-width and margin: auto */
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Pushes items to edges */
             align-items: center;
         }
         .nav-brand {
@@ -48,36 +50,33 @@
             color: #333;
             text-decoration: none;
         }
-        /* Ensure nav link styles match home page */
         .nav-links a {
             margin-left: 40px;
             text-decoration: none;
-            color: #555; /* Match home page color */
-            font-size: 1em; /* Match home page size */
-             /* Removed font-weight, text-transform, letter-spacing from previous version if they differed */
+            color: #555;
+            font-size: 1em;
         }
         .nav-links a:hover {
-            color: #000; /* Match home page hover */
+            color: #000;
         }
 
         /* Content Wrapper */
         .site-wrapper {
-            flex: 1; /* Allows main content to push footer down */
-            display: flex; /* Needed for flex item (main) */
-            flex-direction: column; /* Stack children vertically */
-            width: 100%; /* Take full width available */
-            align-items: center; /* Center the main content area */
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
         }
 
         /* Main Content Area */
         main {
-           /* Removed flex: 1; - handled by site-wrapper */
-            padding: 20px; /* Keep inner margin */
+            padding: 20px;
             background-color: #fff;
-            width: 80%; /* Limit width */
-            max-width: 1200px; /* Set a maximum width */
-            margin-top: 20px; /* Optional: Add space below nav */
-            margin-bottom: 20px; /* Optional: Add space above footer */
+            width: 80%; /* Main content still constrained */
+            max-width: 1200px; /* Main content still constrained */
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
         .back-link {
             display: block;
@@ -92,15 +91,13 @@
         /* Project Header Styles */
         .project-header {
             display: flex;
-            align-items: center; /* Vertically align items */
-            justify-content: space-between; /* Pushes text block and image apart */
+            align-items: center;
+            justify-content: space-between;
             margin-bottom: 30px;
-            gap: 20px; /* Adds space between text block and image if needed */
+            gap: 20px;
         }
         .project-header-text {
-             /* This div now holds the text */
-             flex-basis: 50%; /* Example: give text block roughly half the space */
-             /* Adjust flex properties as needed */
+             flex-basis: 50%;
         }
         .project-title {
             font-size: 2.5em;
@@ -142,49 +139,68 @@
 
         /* Consistent Footer Styles */
         footer {
-            background: #f2f5fa; /* Match home page background */
-            padding: 15px 0; /* Vertical padding, horizontal handled by container */
-            border-top: 1px solid #ddd; /* Match home page border */
-            width: 100%; /* Span full width */
+            background: #f2f5fa;
+            padding: 15px 0; /* Vertical padding ONLY */
+            border-top: 1px solid #ddd;
+            width: 100%;
             flex-shrink: 0;
             margin-top: auto;
         }
+        /* --- MODIFIED FOOTER CONTAINER --- */
          .footer-container {
-            width: 80%; /* Limit content width */
-            max-width: 1200px; /* Match main content max-width */
-            margin: 0 auto; /* Center the content */
+            width: 100%; /* Span full width */
+            padding: 0 40px; /* Add horizontal padding for edge spacing */
+            box-sizing: border-box; /* Include padding in width */
+             /* Removed max-width and margin: auto */
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Pushes items to edges */
             align-items: center;
-            font-size: 1em; /* Match home page size */
-            color: #555; /* Match home page color */
+            font-size: 1em;
+            color: #555;
         }
-        /* Ensure footer link styles match home page */
         .footer-container a {
-            color: #555; /* Match home page color */
-            text-decoration: none; /* Match home page decoration */
-            font-weight: 500; /* Match home page weight */
+            color: #555;
+            text-decoration: none;
+            font-weight: 500;
         }
         .footer-container a:hover {
-            color: #000; /* Match home page hover color */
-            text-decoration: underline; /* Match home page hover decoration */
+            color: #000;
+            text-decoration: underline;
         }
 
         /* Responsive Layout */
         @media (max-width: 768px) {
-            .nav-container, .footer-container, main {
-                width: 95%;
+            /* --- ADJUSTED RESPONSIVE CONTAINER PADDING --- */
+            .nav-container, .footer-container {
+                width: 100%; /* Ensure full width */
+                padding: 0 20px; /* Adjust padding for mobile */
+                /* Remove width: 95% if it was here */
             }
+             /* Keep main content constrained */
+            main {
+                 width: 95%;
+                 padding: 15px;
+            }
+
             nav {
                 padding-top: 10px;
                 padding-bottom: 10px;
             }
+            /* Keep responsive stacking for nav/footer containers */
              .nav-container {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: flex-start; /* Align items left when stacked */
+                gap: 10px; /* Add gap for stacked items */
             }
+             .footer-container {
+                 flex-direction: column;
+                 align-items: center; /* Center items when stacked */
+                 gap: 10px;
+                 text-align: center;
+             }
+            /* Keep other responsive styles */
             .nav-brand {
-                margin-bottom: 10px;
+                margin-bottom: 0; /* Remove bottom margin if using gap */
             }
             .nav-links {
                  margin-left: 0;
@@ -197,11 +213,7 @@
              .nav-links a {
                  margin-left: 0;
              }
-            main {
-                 padding: 15px;
-             }
 
-             /* Responsive project header */
              .project-header {
                  flex-direction: column;
                  align-items: flex-start;
@@ -213,7 +225,6 @@
              .project-header img {
                  max-width: 100%;
              }
-             /* End Responsive project header */
 
             .overview-goal {
                 flex-direction: column;
@@ -223,22 +234,13 @@
                 width: 100%;
                  margin-bottom: 0;
             }
-            .footer-container {
-                 flex-direction: column;
-                 align-items: center;
-                 gap: 10px;
-                 text-align: center;
-            }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="nav-container">
-            <a href="index.html" class="nav-brand">Joanna Lee</a>
-            <div class="nav-links">
-                <a href="index.html">HOME</a>
+        <div class="nav-container"> <a href="index.html" class="nav-brand">Joanna Lee</a> <div class="nav-links"> <a href="index.html">HOME</a>
                 <a href="market-research.html">MARKET RESEARCH</a>
                 <a href="social-media-marketing.html">SOCIAL MEDIA MARKETING</a>
                 <a href="ux-ui.html">UX/UI</a>
@@ -274,10 +276,7 @@
     </div>
 
     <footer>
-        <div class="footer-container">
-            <div>jdlee6526@gmail.com</div>
-            <div>
-                <a href="https://www.linkedin.com/in/joanna-lee-jdlee/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <div class="footer-container"> <div>jdlee6526@gmail.com</div> <div> <a href="https://www.linkedin.com/in/joanna-lee-jdlee/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
         </div>
     </footer>

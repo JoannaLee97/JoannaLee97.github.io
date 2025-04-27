@@ -34,12 +34,10 @@
             width: 100%;
             flex-shrink: 0;
         }
-        /* --- MODIFIED NAV CONTAINER --- */
         .nav-container {
             width: 100%; /* Span full width */
             padding: 0 40px; /* Add horizontal padding for edge spacing */
             box-sizing: border-box; /* Include padding in width */
-            /* Removed max-width and margin: auto */
             display: flex;
             justify-content: space-between; /* Pushes items to edges */
             align-items: center;
@@ -72,7 +70,7 @@
         /* Main Content Area */
         main {
             padding: 20px;
-            background-color: #e2ebf5;
+            background-color: #fff;
             width: 80%; /* Main content still constrained */
             max-width: 1200px; /* Main content still constrained */
             margin-top: 20px;
@@ -130,12 +128,41 @@
             font-size: 1.3em;
             margin-bottom: 10px;
             color: #333;
+            font-weight: normal; /* --- Make titles not bold --- */
         }
         .overview-desc, .goal-desc {
             font-size: 1em;
             line-height: 1.6;
             color: #777;
         }
+
+        /* --- NEW Project Details Section --- */
+        .project-details {
+            display: flex;
+            gap: 30px; /* Space between columns */
+            margin-top: 40px; /* Space above this section */
+            padding-top: 30px; /* Space below the separator */
+            border-top: 1px solid #eee; /* Visual separator line */
+        }
+        .detail-column {
+            flex: 1; /* Make columns equal width */
+        }
+        .detail-title {
+            font-size: 1.1em;
+            font-weight: 600; /* Make title slightly prominent */
+            color: #444; /* Slightly darker than desc */
+            margin-bottom: 8px;
+            margin-top: 0;
+        }
+        .detail-desc {
+            font-size: 1em;
+            color: #777; /* Match other descriptions */
+            line-height: 1.5;
+            margin-top: 0;
+            margin-bottom: 0; /* Remove default p margin if needed */
+        }
+        /* --- END NEW Project Details Section --- */
+
 
         /* Consistent Footer Styles */
         footer {
@@ -146,12 +173,10 @@
             flex-shrink: 0;
             margin-top: auto;
         }
-        /* --- MODIFIED FOOTER CONTAINER --- */
          .footer-container {
             width: 100%; /* Span full width */
             padding: 0 40px; /* Add horizontal padding for edge spacing */
             box-sizing: border-box; /* Include padding in width */
-             /* Removed max-width and margin: auto */
             display: flex;
             justify-content: space-between; /* Pushes items to edges */
             align-items: center;
@@ -170,13 +195,10 @@
 
         /* Responsive Layout */
         @media (max-width: 768px) {
-            /* --- ADJUSTED RESPONSIVE CONTAINER PADDING --- */
             .nav-container, .footer-container {
-                width: 100%; /* Ensure full width */
-                padding: 0 20px; /* Adjust padding for mobile */
-                /* Remove width: 95% if it was here */
+                width: 100%;
+                padding: 0 20px;
             }
-             /* Keep main content constrained */
             main {
                  width: 95%;
                  padding: 15px;
@@ -186,21 +208,13 @@
                 padding-top: 10px;
                 padding-bottom: 10px;
             }
-            /* Keep responsive stacking for nav/footer containers */
              .nav-container {
                 flex-direction: column;
-                align-items: flex-start; /* Align items left when stacked */
-                gap: 10px; /* Add gap for stacked items */
+                align-items: flex-start;
+                gap: 10px;
             }
-             .footer-container {
-                 flex-direction: column;
-                 align-items: center; /* Center items when stacked */
-                 gap: 10px;
-                 text-align: center;
-             }
-            /* Keep other responsive styles */
             .nav-brand {
-                margin-bottom: 0; /* Remove bottom margin if using gap */
+                margin-bottom: 0;
             }
             .nav-links {
                  margin-left: 0;
@@ -234,13 +248,33 @@
                 width: 100%;
                  margin-bottom: 0;
             }
+
+            /* --- Responsive Project Details --- */
+            .project-details {
+                 flex-direction: column; /* Stack columns */
+                 gap: 20px; /* Adjust gap for vertical */
+                 margin-top: 30px;
+                 padding-top: 20px;
+            }
+            /* --- END Responsive Project Details --- */
+
+
+            .footer-container {
+                 flex-direction: column;
+                 align-items: center;
+                 gap: 10px;
+                 text-align: center;
+             }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="nav-container"> <a href="index.html" class="nav-brand">Joanna Lee</a> <div class="nav-links"> <a href="index.html">HOME</a>
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Joanna Lee</a>
+            <div class="nav-links">
+                <a href="index.html">HOME</a>
                 <a href="market-research.html">MARKET RESEARCH</a>
                 <a href="social-media-marketing.html">SOCIAL MEDIA MARKETING</a>
                 <a href="ux-ui.html">UX/UI</a>
@@ -264,19 +298,35 @@
 
             <div class="overview-goal">
                 <div class="overview-section">
-                    <h2 class="overview-title">Overview</h2>
-                    <p class="overview-desc">This project redesigned the Berkshire Hathaway website to enhance its usability and user experience. The existing site, characterized by a simple, text-heavy interface and stock HTML design, lacked key design elements and modern functionality. My role involved conducting user research, creating user personas, analyzing user needs and tasks, and identifying usability requirements. The redesign aimed to create a more accessible, intuitive, and visually appealing platform for users seeking information about Berkshire Hathaway.</p>
+                    <h2 class="overview-title">Overview</h2> <p class="overview-desc">This project redesigned the Berkshire Hathaway website to enhance its usability and user experience. The existing site, characterized by a simple, text-heavy interface and stock HTML design, lacked key design elements and modern functionality. My role involved conducting user research, creating user personas, analyzing user needs and tasks, and identifying usability requirements. The redesign aimed to create a more accessible, intuitive, and visually appealing platform for users seeking information about Berkshire Hathaway.</p>
                 </div>
                 <div class="goal-section">
-                    <h2 class="goal-title">Goal</h2>
-                    <p class="goal-desc">The primary goal of the redesign was to maintain the site's core objective of providing direct access to the company’s documents while improving its overall user-friendliness.</p>
+                    <h2 class="goal-title">Goal</h2> <p class="goal-desc">The primary goal of the redesign was to maintain the site's core objective of providing direct access to the company’s documents while improving its overall user-friendliness.</p>
                 </div>
             </div>
-        </main>
+
+            <div class="project-details">
+                <div class="detail-column">
+                    <h3 class="detail-title">Role</h3>
+                    <p class="detail-desc">Student project</p>
+                </div>
+                <div class="detail-column">
+                    <h3 class="detail-title">Tools</h3>
+                    <p class="detail-desc">Figma</p>
+                </div>
+                <div class="detail-column">
+                    <h3 class="detail-title">Class</h3>
+                    <p class="detail-desc">Project 2 CMST 308</p>
+                </div>
+            </div>
+            </main>
     </div>
 
     <footer>
-        <div class="footer-container"> <div>jdlee6526@gmail.com</div> <div> <a href="https://www.linkedin.com/in/joanna-lee-jdlee/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <div class="footer-container">
+            <div>jdlee6526@gmail.com</div>
+            <div>
+                <a href="https://www.linkedin.com/in/joanna-lee-jdlee/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
         </div>
     </footer>

@@ -62,8 +62,10 @@
         /* Main Content Area */
         main {
             flex: 1;
-            padding: 20px;
-            background-color: #e2ebf5;
+            padding: 30px; /* Added margin */
+            background-color: #fff;
+            width: 80%; /* Limiting the width */
+            max-width: 1200px; /* Max width for the content area */
         }
         .back-link {
             display: block;
@@ -87,7 +89,7 @@
         }
         .project-header {
             display: flex;
-            align-items: center;
+            align-items: flex-start; /* Align items to the top */
             justify-content: space-between;
             margin-bottom: 30px;
         }
@@ -95,13 +97,14 @@
             max-width: 45%;
             height: auto;
             border-radius: 8px;
+            margin-top: -100px; /* Make the image higher */
         }
         .overview-goal {
             display: flex;
             justify-content: space-between;
         }
         .overview-section {
-            width: 48%;
+            width: 48%; /* Make them equal */
         }
         .overview-title, .goal-title {
             font-size: 1.3em;

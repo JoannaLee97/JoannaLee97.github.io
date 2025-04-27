@@ -102,34 +102,48 @@
             color: #495057;
             margin-bottom: 30px;
         }
-        /* Updated styles for social links container */
         .sidebar .social-links {
-            display: flex; /* Use flexbox for alignment */
-            align-items: center; /* Vertically align items */
-            flex-wrap: wrap; /* Allow items to wrap if needed */
-            gap: 15px; /* Add space between items */
+             /* Added to align items vertically and allow wrapping if needed */
+             display: flex;
+             align-items: center;
+             flex-wrap: wrap; /* Allows items to wrap */
+             gap: 10px; /* Adds space between items */
         }
-        /* Style for the icon link */
-        .sidebar .social-links a.icon-link {
+        .sidebar .social-links a {
             color: #6c757d;
             text-decoration: none;
-            font-size: 1.5em; /* Keep icon size */
-            display: inline-block; /* Needed for alignment */
+            font-size: 1.2em; /* Adjusted size slightly for better balance */
+            margin-right: 15px; /* Keep right margin for spacing */
+            display: inline-flex; /* Align icon and text nicely */
+            align-items: center; /* Vertically center icon and text */
+            line-height: 1; /* Prevent extra space */
         }
-         /* Style for the text/download link */
-        .sidebar .social-links a.text-link {
-            color: #6c757d;
-            text-decoration: none;
-            font-size: 0.9em; /* Adjust text size */
-            font-weight: 500;
-            vertical-align: middle; /* Align text with icon */
-            display: inline-flex; /* Use inline-flex for icon inside if needed */
-            align-items: center; /* Center icon and text */
-            gap: 5px; /* Space between icon and text if icon is used */
+        .sidebar .social-links a i { /* Style for icons */
+            font-size: 1.5em; /* Make icons slightly larger */
+            margin-right: 5px; /* Add space between icon and text, or just use icon alone */
         }
+        /* Specifically target the Resume link if needed */
+        .sidebar .social-links a.resume-link {
+             font-size: 0.9em; /* Smaller font size for text link */
+             font-weight: 500;
+             padding: 5px 10px; /* Add some padding for button-like feel */
+             border: 1px solid #ced4da; /* Subtle border */
+             border-radius: 4px; /* Rounded corners */
+             background-color: #e9ecef; /* Light background */
+        }
+         .sidebar .social-links a.resume-link i {
+             font-size: 1em; /* Match icon size closer to text */
+             margin-left: 5px; /* Space after text, before icon */
+             margin-right: 0; /* Remove default right margin for icon inside link */
+         }
         .sidebar .social-links a:hover {
             color: #007bff;
         }
+        .sidebar .social-links a.resume-link:hover {
+            background-color: #dee2e6; /* Darken background on hover */
+            border-color: #adb5bd;
+        }
+
 
         /* Content Area Styles */
         .content-area {
@@ -281,15 +295,12 @@
                         I have a strong foundation in UX/UI as a student at UMGC. I strive to demonstrate my expertise in creating user-centered accessible designs that align with business goals. My designs highlight my skills in user research, visual design, and functional prototyping.
                     </div>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/joanna-lee-jdlee/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="icon-link">
+                        <a href="https://www.linkedin.com/in/joanna-lee-jdlee/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" title="LinkedIn">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="Joanna_Lee_Resume_UXUI.pdf" download="Joanna_Lee_UX_UI_Resume.pdf"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           aria-label="Download UX/UI Resume"
-                           class="text-link">
-                           Download UX/UI Resume
+                        <a href="https://drive.google.com/file/d/14bLZ4Ctbiae_hWwHmp58Lc_QXqbNk799/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Download Resume" class="resume-link" title="Download Resume">
+                            Resume
+                            <i class="fas fa-download"></i>
                         </a>
                     </div>
                 </div>
@@ -299,7 +310,8 @@
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-image">
-                            <img src="Home-Brick-Executive.png" alt="Brick Executive Project Thumbnail"> </div>
+                            <img src="Home-Brick-Executive.png" alt="Brick Executive Project Thumbnail">
+                        </div>
                         <div class="project-info">
                             <div class="project-title">BRICK EXECUTIVE</div>
                             <div class="project-desc">Internship</div>
@@ -308,13 +320,14 @@
 
                     <div class="project-card">
                         <div class="project-image">
-                             <img src="Home-Berkshire-Hathaway.jpg" alt="Berkshire Hathaway Project Thumbnail"> </div>
+                             <img src="Home-Berkshire-Hathaway.jpg" alt="Berkshire Hathaway Project Thumbnail">
+                        </div>
                          <div class="project-info">
                             <div class="project-title">BERKSHIRE HATHAWAY</div>
                             <div class="project-desc">CMST 308 User Experience and Interface Design</div>
                          </div>
                     </div>
-                 </div>
+                    </div>
             </main>
         </div>
     </div>
@@ -322,7 +335,7 @@
         <div>jdlee6526@gmail.com</div>
         <div>
             <a href="https://www.linkedin.com/in/joanna-lee-jdlee/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </div>
+        </div>
     </footer>
 
 </body>

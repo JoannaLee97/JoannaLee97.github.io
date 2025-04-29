@@ -34,31 +34,18 @@
         /* === UPDATED Navigation Bar Styles === */
         nav {
             background: #e2ebf5;
-            padding: 15px; /* Vertical padding only */
+            padding: 15px 40px; /* Vertical padding only */
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid #ddd;
             flex-shrink: 0; /* Prevent nav shrinking */
         }
-        .nav-container {
-            width: 100%; /* Container takes full width */
-            padding: 0 40px; /* Horizontal padding for edge spacing */
-            box-sizing: border-box; /* Include padding in width */
-            display: flex;
-            justify-content: space-between; /* Pushes items to edges */
-            align-items: center;
-        }
         .nav-brand {
             font-size: 1.5em;
             font-weight: bold;
             color: #333;
             text-decoration: none;
-            flex-shrink: 0; /* Prevent brand shrinking */
-        }
-        .nav-links {
-             display: flex; /* Align links horizontally */
-             align-items: center;
         }
         .nav-links a {
             margin-left: 40px;
@@ -190,8 +177,7 @@
 
         /* Responsive Adjustments */
         @media (max-width: 992px) {
-             nav { padding: 20px 20px; } /* Adjust nav padding */
-             .nav-container { padding: 0 20px; } /* Adjust container padding */
+             nav { padding: 15px 20px; } /* Adjust nav padding */
              .nav-links a { margin-left: 20px; }
              .container {
                  flex-direction: column; /* Stack image and text */
@@ -217,19 +203,18 @@
 
         @media (max-width: 768px) {
              .nav-container {
-                  padding: 0 20px; /* Ensure consistent padding */
+                  padding: 10px 20px; /* Ensure consistent padding */
                   flex-direction: column; /* Stack nav items */
                   align-items: flex-start;
                   gap: 10px;
              }
              nav { padding: 10px 20px; } /* Adjust overall nav padding */
-             .nav-brand { margin-bottom: 0; } /* Reset margin */
+             .nav-brand { margin-bottom: 10px; } /* Reset margin */
              .nav-links {
                   margin-left: 0;
                   display: flex;
-                  flex-direction: column; /* Stack links */
+                  flex-wrap: wrap; /* Stack links */
                   align-items: flex-start;
-                  width: 100%;
                   gap: 10px; /* Space between links */
              }
              .nav-links a { margin-left: 0; }

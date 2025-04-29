@@ -31,39 +31,45 @@
             overflow: hidden; /* Prevent unexpected scrollbars */
         }
 
-        /* === UPDATED Navigation Bar Styles === */
+        /* === Navigation Bar Styles (Matched to Code 1) === */
         nav {
             background: #e2ebf5;
-            padding: 15px 40px; /* Vertical padding only */
+            padding: 15px 40px; /* Vertical and Horizontal padding */
             display: flex;
-            justify-content: space-between;
+            justify-content: space-between; /* Pushes brand left, links right */
             align-items: center;
             border-bottom: 1px solid #ddd;
-            flex-shrink: 0; /* Prevent nav shrinking */
+            flex-shrink: 0; /* Prevent nav from shrinking */
         }
+        /* Removed .nav-container styles as it's not used in Code 1's structure */
         .nav-brand {
             font-size: 1.5em;
             font-weight: bold;
             color: #333;
             text-decoration: none;
+            /* flex-shrink removed */
+        }
+        .nav-links {
+             /* display: flex; removed */
+             /* align-items: center; removed */
         }
         .nav-links a {
-            margin-left: 40px;
+            margin-left: 40px; /* Spacing between links */
             text-decoration: none;
             color: #555;
             font-size: 1em;
-            /* Added for consistency */
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            white-space: nowrap; /* Prevent links wrapping */
+            /* white-space: nowrap; removed */
         }
         .nav-links a:hover {
             color: #000;
         }
-        /* === END UPDATED Navigation Bar Styles === */
+        /* === END Navigation Bar Styles === */
 
-        .container { /* Styles for main content area */
+        /* Styles for main content area (from Code 2) */
+        .container {
             display: flex;
             align-items: flex-start;
             padding: 40px;
@@ -152,7 +158,7 @@
             color: #444;
         }
 
-        /* Footer Styles */
+        /* Footer Styles (from Code 2) */
         footer {
             background: #f2f5fa;
             padding: 15px 40px;
@@ -177,8 +183,17 @@
 
         /* Responsive Adjustments */
         @media (max-width: 992px) {
-             nav { padding: 15px 20px; } /* Adjust nav padding */
-             .nav-links a { margin-left: 20px; }
+            /* Nav adjustments (Matched to Code 1) */
+            nav {
+                 padding-left: 20px;
+                 padding-right: 20px;
+            }
+            .nav-links a {
+                 margin-left: 20px;
+            }
+            /* Removed .nav-container rule */
+
+            /* Container adjustments (from Code 2) */
              .container {
                  flex-direction: column; /* Stack image and text */
                  width: 90%;
@@ -198,27 +213,33 @@
                  padding-left: 0; /* Remove padding */
                  flex: 1; /* Reset flex */
              }
+             /* Footer adjustments (from Code 2) */
              footer { padding: 15px 20px; }
-         }
+        }
 
         @media (max-width: 768px) {
-             .nav-container {
-                  padding: 10px 20px; /* Ensure consistent padding */
-                  flex-direction: column; /* Stack nav items */
-                  align-items: flex-start;
-                  gap: 10px;
-             }
-             nav { padding: 10px 20px; } /* Adjust overall nav padding */
-             .nav-brand { margin-bottom: 10px; } /* Reset margin */
-             .nav-links {
-                  margin-left: 0;
-                  display: flex;
-                  flex-wrap: wrap; /* Stack links */
-                  align-items: flex-start;
-                  gap: 10px; /* Space between links */
-             }
-             .nav-links a { margin-left: 0; }
+            /* Nav adjustments (Matched to Code 1) */
+            nav {
+                padding: 10px 20px; /* Padding adjusted */
+                flex-direction: column; /* Stack nav items */
+                align-items: flex-start; /* Align stacked items left */
+            }
+            .nav-brand {
+                margin-bottom: 10px; /* Add space below brand when stacked */
+            }
+            .nav-links {
+                margin-left: 0;
+                display: flex; /* Make links container flex */
+                flex-wrap: wrap; /* Allow links to wrap */
+                gap: 15px; /* Spacing for wrapped links */
+                /* Removed Code 2's stacking/width rules */
+            }
+            .nav-links a {
+                margin-left: 0; /* Remove left margin on small screens */
+            }
+            /* Removed .nav-container rule */
 
+            /* Container adjustments (from Code 2) */
              .container {
                  width: 95%;
                  padding: 20px;
@@ -229,6 +250,7 @@
              p { font-size: 1em; }
              .section-tagline { font-size: 1.2em; }
 
+             /* Footer adjustments (from Code 2) */
              footer { padding: 10px 20px; flex-direction: column; text-align: center; gap: 5px; }
         }
 
@@ -237,16 +259,14 @@
 <body>
     <div class="site-wrapper">
         <nav>
-            <div class="nav-container"> <a href="index.html" class="nav-brand">Joanna Lee</a>
-                <div class="nav-links">
-                    <a href="index.html">HOME</a>
-                    <a href="market-research.html">MARKET RESEARCH</a>
-                    <a href="social-media-marketing.html">SOCIAL MEDIA MARKETING</a>
-                    <a href="ux-ui.html">UX/UI</a>
-                </div>
+            <a href="index.html" class="nav-brand">Joanna Lee</a>
+            <div class="nav-links">
+                <a href="index.html">HOME</a>
+                <a href="market-research.html">MARKET RESEARCH</a>
+                <a href="social-media-marketing.html">SOCIAL MEDIA MARKETING</a>
+                <a href="ux-ui.html">UX/UI</a>
             </div>
         </nav>
-
         <div class="container">
             <div class="image-column">
                  <img src="pfp.jpg" alt="Joanna Lee Profile Picture">
@@ -276,13 +296,12 @@
                 </section>
             </div>
         </div>
-
         <footer>
             <div>jdlee6526@gmail.com</div>
             <div>
                 <a href="https://www.linkedin.com/in/joanna-lee-jdlee/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             </div>
         </footer>
-    </div>
+        </div>
 </body>
 </html>

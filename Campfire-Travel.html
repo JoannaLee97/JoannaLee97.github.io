@@ -87,23 +87,23 @@
             transition: color 0.2s ease; /* Smooth hover */
         }
          .back-link:hover {
-             color: #000; /* Darker on hover */
+           color: #000; /* Darker on hover */
          }
         .back-link i {
             margin-right: 8px;
             transition: transform 0.2s ease-in-out;
         }
         .back-link:hover i {
-             transform: translateX(-3px);
+           transform: translateX(-3px);
         }
         /* Style for the bottom back link */
         .back-link-bottom {
-             display: block; /* Make it block level */
-             margin-top: 50px; /* Add space above the bottom link */
-             margin-bottom: 0; /* Reset bottom margin for this specific link */
-             text-align: left; /* Ensure left alignment */
-             border-top: 1px solid #eee; /* Optional separator */
-             padding-top: 20px; /* Space above text after border */
+           display: block; /* Make it block level */
+           margin-top: 50px; /* Add space above the bottom link */
+           margin-bottom: 0; /* Reset bottom margin for this specific link */
+           text-align: left; /* Ensure left alignment */
+           border-top: 1px solid #eee; /* Optional separator */
+           padding-top: 20px; /* Space above text after border */
         }
 
 
@@ -116,7 +116,7 @@
             gap: 40px;
         }
         .project-header-text {
-             flex: 1;
+           flex: 1;
         }
         .project-title {
             font-size: 2.8em;
@@ -130,13 +130,13 @@
              margin-bottom: 0;
         }
         .project-header img {
-             max-width: 50%;
-             min-width: 300px;
-             height: auto;
-             border-radius: 8px;
-             display: block;
-             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-         }
+           max-width: 50%;
+           min-width: 300px;
+           height: auto;
+           border-radius: 8px;
+           display: block;
+           box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
 
 
         /* Overview/Goal Section */
@@ -161,6 +161,15 @@
             line-height: 1.7;
             color: #555;
         }
+        /* Goal list specific styling */
+        .goal-desc ul {
+            margin: 15px 0 0 0; /* Space above list */
+            padding-left: 20px; /* Indent list */
+            list-style-type: disc;
+        }
+        .goal-desc li {
+            margin-bottom: 10px; /* Space between list items */
+        }
 
         /* Project Details Section */
         .project-details {
@@ -169,7 +178,7 @@
             margin-top: 30px;
             padding: 30px 0;
             border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
+            /* Removed border-bottom to place it after the new section */
         }
         .detail-column {
             flex: 1;
@@ -192,10 +201,60 @@
             margin-bottom: 0;
         }
 
+        /* --- NEW: Original eMagazine Section Styling --- */
+        .original-emagazine-section {
+            display: flex;
+            gap: 30px; /* Space between text and image */
+            align-items: flex-start; /* Align top edges */
+            margin-top: 40px; /* Space above section */
+            padding: 30px 0; /* Padding top/bottom */
+            border-top: 1px solid #eee; /* Separator line above */
+            border-bottom: 1px solid #eee; /* Separator line below */
+        }
+
+        .original-emagazine-section .text-column,
+        .original-emagazine-section .image-column {
+            flex: 1; /* Equal width columns */
+            min-width: 0; /* Prevents flexbox overflow issues */
+        }
+
+        .original-emagazine-section .text-column h2 { /* Heading style for this section */
+            font-size: 1.6em; /* Match other section titles */
+            font-weight: 600;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eef3f9;
+            padding-bottom: 8px;
+        }
+
+        .original-emagazine-section .text-column ul {
+            margin: 0;
+            padding-left: 25px; /* Indentation for list items */
+            list-style: disc;
+            color: #555; /* Text color */
+            font-size: 1em;
+            line-height: 1.7; /* Spacing for readability */
+        }
+
+        .original-emagazine-section .text-column li {
+            margin-bottom: 15px; /* Space between list items */
+        }
+
+        .original-emagazine-section .image-column img {
+            max-width: 100%; /* Make image responsive */
+            height: auto;
+            display: block; /* Remove extra space below image */
+            border-radius: 8px; /* Optional: Rounded corners */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Optional: subtle shadow */
+        }
+        /* --- END: New Section Styling --- */
+
         /* Role & Image Section */
         .role-image-section {
             margin-top: 40px;
             padding-bottom: 20px;
+            /* border-top: 1px solid #eee; Moved border logic around new section */
         }
         .role-description h2 {
             font-size: 1.6em;
@@ -218,16 +277,10 @@
             margin-bottom: 15px;
         }
          .role-image {
-             margin-top: 30px;
-             text-align: left;
-        }
+           /* Removed styles - image is no longer here */
+         }
         .role-image img {
-             max-width: 100%;
-             height: auto;
-             display: block;
-             border-radius: 8px;
-             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-             margin-left: 0;
+           /* Removed styles - image is no longer here */
          }
 
         /* Content Sections Styling (includes Wireframes) */
@@ -260,11 +313,11 @@
             margin-bottom: 10px;
         }
         .wireframes-section p {
-             margin-bottom: 15px;
+           margin-bottom: 15px;
         }
         .usability-testing li strong {
-             font-weight: 600;
-             color: #444;
+           font-weight: 600;
+           color: #444;
         }
 
         /* Image Gallery Section Styling */
@@ -356,10 +409,10 @@
                  align-items: flex-start;
              }
              .project-header img {
-                  max-width: 80%;
-                  min-width: initial;
-                  margin-top: 20px;
-              }
+                 max-width: 80%;
+                 min-width: initial;
+                 margin-top: 20px;
+             }
         }
 
         @media (max-width: 768px) {
@@ -376,21 +429,21 @@
                 padding-bottom: 10px;
             }
              .nav-container {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 10px;
-            }
+                 flex-direction: column;
+                 align-items: flex-start;
+                 gap: 10px;
+             }
             .nav-brand { margin-bottom: 0; }
             .nav-links {
                  margin-left: 0; display: flex; flex-direction: column;
                  align-items: flex-start; gap: 10px; width: 100%;
-            }
+             }
              .nav-links a { margin-left: 0; }
 
              .project-header img { max-width: 100%; }
 
             .overview-goal {
-                flex-direction: column; gap: 25px; margin-bottom: 30px;
+                 flex-direction: column; gap: 25px; margin-bottom: 30px;
             }
             .overview-section, .goal-section { width: 100%; margin-bottom: 0; }
 
@@ -398,9 +451,25 @@
                  flex-direction: column; gap: 20px; margin-top: 30px; padding: 20px 0;
             }
 
+            /* --- NEW: Responsive styling for Original eMagazine Section --- */
+            .original-emagazine-section {
+                 flex-direction: column; /* Stack columns */
+                 gap: 25px; /* Adjust vertical gap */
+                 padding: 20px 0; /* Adjust padding */
+            }
+            /* Optional: Move image above text on mobile */
+            /* .original-emagazine-section .image-column {
+                 order: -1;
+             } */
+             .original-emagazine-section .image-column img {
+                 max-width: 90%; /* Prevent full bleed */
+                 margin: 0 auto; /* Center image */
+             }
+             /* --- END: New Responsive Styling --- */
+
             .role-image-section { margin-top: 30px; }
-            .role-image { margin-top: 20px; }
-            .role-image img { max-width: 90%; }
+             .role-image { /* Image removed, no specific mobile style needed here now */ }
+             /* .role-image img { max-width: 90%; } Removed as image moved */
 
              .content-section h2 { font-size: 1.4em; margin-bottom: 15px; }
              .content-section p, .content-section ul { line-height: 1.6; }
@@ -412,15 +481,15 @@
             }
 
             .lessons-next-steps-section {
-                flex-direction: column;
-                gap: 30px;
-                margin-top: 30px;
-                padding-top: 20px;
+                 flex-direction: column;
+                 gap: 30px;
+                 margin-top: 30px;
+                 padding-top: 20px;
             }
              /* Adjust bottom back link spacing on mobile */
              .back-link-bottom {
-                  margin-top: 30px;
-                  padding-top: 15px;
+                 margin-top: 30px;
+                 padding-top: 15px;
              }
 
             .footer-container {
@@ -455,7 +524,7 @@
                     <h1 class="project-title">Campfire Travel</h1>
                     <p class="project-subtitle">CMST 295 Fundamentals of Digial Design</p>
                 </div>
-                <img src="Magazine-Campfire-Travel.png"> </div>
+                </div>
 
             <div class="overview-goal">
                 <div class="overview-section">
@@ -466,10 +535,10 @@
                     <h2 class="goal-title">Goal</h2>
                     <p class="goal-desc">SMART goals of the project: </p>
                       <ul>
-                          <li>Content Discoverability: The layout was designed to showcase 30 in-depth articles on states and events, aiming to increase site traffic by December 2025.</li>
-                          <li>Video Integration: Space was allocated for 15 video tutorials on topics like RV setup and outdoor cooking, targeting 100,000 video views by Q3 2026.</li>
-                          <li>User Engagement: The clean, intuitive design aimed to attract 2,000 or more unique page views per article within one month of publishing.</li>
-                    </ul>
+                           <li>Content Discoverability: The layout was designed to showcase 30 in-depth articles on states and events, aiming to increase site traffic by December 2025.</li>
+                           <li>Video Integration: Space was allocated for 15 video tutorials on topics like RV setup and outdoor cooking, targeting 100,000 video views by Q3 2026.</li>
+                           <li>User Engagement: The clean, intuitive design aimed to attract 2,000 or more unique page views per article within one month of publishing.</li>
+                      </ul>
                 </div>
             </div>
 
@@ -488,6 +557,19 @@
                 </div>
             </div>
 
+            <div class="original-emagazine-section">
+                <div class="text-column">
+                    <h2>Original eMagazine</h2>
+                    <ul>
+                        <li>The original eMagazine interface is not optimized for mobile devices, making it difficult for users to read and navigate content on smartphones and tablets; a responsive website would greatly improve accessibility and user experience.</li>
+                        <li>Navigation within the eMagazine is not intuitive, with users potentially struggling to locate specific articles or sections; a redesigned website can implement clearer menus, logical categorization, and search functionality to streamline content discovery.</li>
+                        <li>The eMagazine lacks interactive features and multimedia integration, limiting user engagement; a modern website can incorporate clickable elements, embedded videos, and social sharing options to enhance interactivity and increase reader retention.</li>
+                    </ul>
+                </div>
+                <div class="image-column">
+                    <img src="Magazine-Campfire-Travel.png" alt="Original Campfire Travel eMagazine interface showing layout issues">
+                </div>
+            </div>
             <div class="role-image-section">
                 <div class="role-description">
                     <h2>My Role</h2>
@@ -496,10 +578,8 @@
                         <li>I structured the wireframes with a logical reading flow from the top navigation downward and included dedicated sections for California, Oregon, Wyoming, and Idaho, each featuring highlighted destinations to engage users.</li>
                         <li>To promote exploration and increase engagement, I incorporated clickable components throughout the wireframes, ensuring users could easily navigate and interact with key site areas.</li>
                     </ul>
-                    <div class="role-image">
-                        <img src="Magazine-Campfire-Travel.png"> </div>
-                </div>
-            <div class="lessons-next-steps-section">
+                    </div>
+             </div> <div class="lessons-next-steps-section">
                 <div class="lessons-learned-column">
                     <h3>Lessons Learned</h3>
                     <ul>
@@ -520,7 +600,7 @@
             <a href="ux-ui.html" class="back-link back-link-bottom">
                 <i class="fas fa-arrow-left"></i> Back to Case Studies
             </a>
-            </main>
+         </main>
     </div>
 
     <footer>

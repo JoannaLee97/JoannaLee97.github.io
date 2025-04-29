@@ -1,1 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berkshire Hathaway</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Core structure styles */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        *, *:before, *:after {
+            box-sizing: inherit;
+        }
+        body {
+            background-color: #e2ebf5;
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
+        /* Consistent Navigation Bar Styles */
+        nav {
+            background: #e2ebf5;
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
+            width: 100%;
+            flex-shrink: 0;
+        }
+        .nav-container {
+            width: 100%;
+            padding: 0 40px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-brand {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+        .nav-links a {
+            margin-left: 40px;
+            text-decoration: none;
+            color: #555;
+            font-size: 1em;
+        }
+        .nav-links a:hover {
+            color: #000;
+        }
+
+        /* Content Wrapper */
+        .site-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+        }
+
+        /* Main Content Area */
+        main {
+            padding: 30px 40px;
+            background-color: #f2f5fa; /* Content area background */
+            width: 80%;
+            max-width: 1200px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 30px; /* Only applies effectively to top link */
+            color: #555;
+            text-decoration: none;
+            font-size: 0.95em;
+            transition: color 0.2s ease; /* Smooth hover */
+        }
+         .back-link:hover {
+             color: #000; /* Darker on hover */
+         }
+        .back-link i {
+            margin-right: 8px;
+            transition: transform 0.2s ease-in-out;
+        }
+        .back-link:hover i {
+             transform: translateX(-3px);
+        }
+        /* Style for the bottom back link */
+        .back-link-bottom {
+             display: block; /* Make it block level */
+             margin-top: 50px; /* Add space above the bottom link */
+             margin-bottom: 0; /* Reset bottom margin for this specific link */
+             text-align: left; /* Ensure left alignment */
+             border-top: 1px solid #eee; /* Optional separator */
+             padding-top: 20px; /* Space above text after border */
+        }
+
+
+        /* Project Header Styles */
+        .project-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            gap: 40px;
+        }
+        .project-header-text {
+             flex: 1;
+        }
+        .project-title {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #222;
+        }
+        .project-subtitle {
+            font-size: 1.1em;
+            color: #888;
+             margin-bottom: 0;
+        }
+        .project-header img {
+             max-width: 50%;
+             min-width: 300px;
+             height: auto;
+             border-radius: 8px;
+             display: block;
+             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+         }
+
+
+        /* Overview/Goal Section */
+        .overview-goal {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .overview-section, .goal-section {
+           flex: 1;
+        }
+        .overview-title, .goal-title {
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            color: #333;
+            font-weight: 600;
+             border-bottom: 2px solid #eef3f9;
+             padding-bottom: 8px;
+        }
+        .overview-desc, .goal-desc {
+            font-size: 1em;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* Project Details Section */
+        .project-details {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+            padding: 30px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        .detail-column {
+            flex: 1;
+            text-align: center;
+        }
+        .detail-title {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: #666;
+            margin-bottom: 5px;
+            margin-top: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .detail-desc {
+            font-size: 1em;
+            color: #333;
+            line-height: 1.5;
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        /* Role & Image Section */
+        .role-image-section {
+            margin-top: 40px;
+            padding-bottom: 20px;
+        }
+        .role-description h2 {
+            font-size: 1.6em;
+            font-weight: 600;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 20px;
+             border-bottom: 2px solid #eef3f9;
+             padding-bottom: 8px;
+        }
+        .role-description ul {
+            margin: 0;
+            padding-left: 25px;
+            list-style-type: disc;
+            color: #555;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+        .role-description li {
+            margin-bottom: 15px;
+        }
+         .role-image {
+             margin-top: 30px;
+             text-align: left;
+        }
+        .role-image img {
+             max-width: 100%;
+             height: auto;
+             display: block;
+             border-radius: 8px;
+             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+             margin-left: 0;
+         }
+
+        /* Content Sections Styling (includes Wireframes) */
+        .content-section {
+            margin-top: 40px;
+            padding-bottom: 10px;
+        }
+        .content-section h2 {
+            font-size: 1.6em;
+            font-weight: 600;
+            color: #333;
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eef3f9;
+            padding-bottom: 8px;
+        }
+        .content-section p,
+        .content-section ul {
+            margin: 0 0 15px 0;
+            padding-left: 0;
+            color: #555;
+            line-height: 1.7;
+            font-size: 1em;
+        }
+        .content-section ul {
+            list-style-type: disc;
+            padding-left: 25px;
+        }
+        .content-section li {
+            margin-bottom: 10px;
+        }
+        .wireframes-section p {
+             margin-bottom: 15px;
+        }
+        .usability-testing li strong {
+             font-weight: 600;
+             color: #444;
+        }
+
+        /* Image Gallery Section Styling */
+        .image-gallery-section {
+            display: flex;
+            gap: 20px;
+            margin-top: 40px;
+            align-items: flex-start;
+        }
+        .image-gallery-column {
+            flex: 1;
+        }
+        .image-gallery-column img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Lessons Learned / Next Steps Section Styling */
+        .lessons-next-steps-section {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            padding: 30px 0 10px 0;
+            border-top: 1px solid #eee;
+        }
+        .lessons-learned-column,
+        .next-steps-column {
+            flex: 1;
+        }
+        .lessons-next-steps-section h3 {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #444;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .lessons-next-steps-section ul {
+            margin: 0;
+            padding-left: 20px;
+            list-style: disc;
+            color: #555;
+            font-size: 1em;
+        }
+        .lessons-next-steps-section li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        /* Consistent Footer Styles */
+        footer {
+            background: #f2f5fa;
+            padding: 15px 0;
+            border-top: 1px solid #ddd;
+            width: 100%;
+            flex-shrink: 0;
+            margin-top: auto;
+        }
+         .footer-container {
+            width: 100%;
+            padding: 0 40px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1em;
+            color: #555;
+        }
+        .footer-container a {
+            color: #555;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .footer-container a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 992px) {
+             main {
+                 width: 90%;
+                 padding: 20px 30px;
+             }
+             .project-header {
+                 flex-direction: column;
+                 align-items: flex-start;
+             }
+             .project-header img {
+                  max-width: 80%;
+                  min-width: initial;
+                  margin-top: 20px;
+              }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container, .footer-container {
+                width: 100%;
+                padding: 0 20px;
+            }
+            main {
+                 width: 95%;
+                 padding: 20px;
+            }
+            nav {
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+             .nav-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .nav-brand { margin-bottom: 0; }
+            .nav-links {
+                 margin-left: 0; display: flex; flex-direction: column;
+                 align-items: flex-start; gap: 10px; width: 100%;
+            }
+             .nav-links a { margin-left: 0; }
+
+             .project-header img { max-width: 100%; }
+
+            .overview-goal {
+                flex-direction: column; gap: 25px; margin-bottom: 30px;
+            }
+            .overview-section, .goal-section { width: 100%; margin-bottom: 0; }
+
+            .project-details {
+                 flex-direction: column; gap: 20px; margin-top: 30px; padding: 20px 0;
+            }
+
+            .role-image-section { margin-top: 30px; }
+            .role-image { margin-top: 20px; }
+            .role-image img { max-width: 90%; }
+
+             .content-section h2 { font-size: 1.4em; margin-bottom: 15px; }
+             .content-section p, .content-section ul { line-height: 1.6; }
+
+            .image-gallery-section {
+                 flex-direction: column;
+                 gap: 25px;
+                 margin-top: 30px;
+            }
+
+            .lessons-next-steps-section {
+                flex-direction: column;
+                gap: 30px;
+                margin-top: 30px;
+                padding-top: 20px;
+            }
+             /* Adjust bottom back link spacing on mobile */
+             .back-link-bottom {
+                  margin-top: 30px;
+                  padding-top: 15px;
+             }
+
+            .footer-container {
+                 flex-direction: column; align-items: center;
+                 gap: 10px; text-align: center;
+             }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Joanna Lee</a>
+            <div class="nav-links">
+                <a href="index.html">HOME</a>
+                <a href="market-research.html">MARKET RESEARCH</a>
+                <a href="social-media-marketing.html">SOCIAL MEDIA MARKETING</a>
+                <a href="ux-ui.html">UX/UI</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="site-wrapper">
+        <main class="content-area">
+            <a href="ux-ui.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Case Studies
+            </a>
+
+            <div class="project-header">
+                <div class="project-header-text">
+                    <h1 class="project-title">Berkshire Hathaway</h1>
+                    <p class="project-subtitle">CMST 308 User Experience and Interface Design</p>
+                </div>
+                <img src="Home-Berkshire-Hathaway.jpg" alt="Berkshire Hathaway Project Mockup"> </div>
+
+            <div class="overview-goal">
+                <div class="overview-section">
+                    <h2 class="overview-title">Overview</h2>
+                    <p class="overview-desc">This project redesigned the Berkshire Hathaway website to enhance its usability and user experience. The existing site, characterized by a simple, text-heavy interface and stock HTML design, lacked key design elements and modern functionality. My role involved conducting user research, creating user personas, analyzing user needs and tasks, and identifying usability requirements. The redesign aimed to create a more accessible, intuitive, and visually appealing platform for users seeking information about Berkshire Hathaway.</p>
+                </div>
+                <div class="goal-section">
+                    <h2 class="goal-title">Goal</h2>
+                    <p class="goal-desc">The primary goal of the redesign was to maintain the site's core objective of providing direct access to the company’s documents while improving its overall user-friendliness.</p>
+                </div>
+            </div>
+
+            <div class="project-details">
+                <div class="detail-column">
+                    <h3 class="detail-title">Role</h3>
+                    <p class="detail-desc">Student project</p>
+                </div>
+                <div class="detail-column">
+                    <h3 class="detail-title">Tools</h3>
+                    <p class="detail-desc">Figma</p>
+                </div>
+                <div class="detail-column">
+                    <h3 class="detail-title">Class</h3>
+                    <p class="detail-desc">Project 2 CMST 308</p>
+                </div>
+            </div>
+
+            <div class="role-image-section">
+                <div class="role-description">
+                    <h2>My Role</h2>
+                    <ul>
+                        <li>Analyze the usability of the existing Berkshire Hathaway website and propose a redesigned interface that prioritizes clarity, accessibility, and a modern aesthetic.</li>
+                        <li>Streamline navigation, simplify tasks like finding financial reports and shareholder letters, and address key pain points identified through heuristic evaluation and usability testing.</li>
+                        <li>Design solutions for specific issues such as the lack of error messages, limited search functionality, and the absence of a help/FAQ section to enhance overall user satisfaction.</li>
+                    </ul>
+                    <div class="role-image">
+                        <img src="Original-Website-Berkshire.jpg" alt="Original Berkshire Hathaway Website Screenshot"> </div>
+                </div>
+            </div>
+
+            <div class="content-section personas-test-plan">
+                <h2>Create Personas & Usability Test Plan</h2>
+                <ul>
+                    <li>Develop user personas with specific goals and challenges when accessing the Berkshire Hathaway website and a test plan for testing its usability.</li>
+                    <li>Participants performed tasks (finding annual reports, shareholder letters) and rated satisfaction (1-5 scale) based on specific usability criteria.</li>
+                </ul>
+            </div>
+
+            <div class="content-section usability-testing">
+                <h2>Usability Testing</h2>
+                <p>A mixed-methods approach was employed, leveraging both quantitative and qualitative metrics to comprehensively evaluate the Berkshire Hathaway website's usability.</p>
+                <ul>
+                    <li><strong>Quantitative Metrics:</strong> Task success rates, completion times, and satisfaction scores (using a 5-point Likert scale) were collected to measure task efficiency and user satisfaction.</li>
+                    <li><strong>Qualitative Metrics:</strong> User interviews and observational analysis were conducted to gain deeper insights into user behaviors, pain points, and overall perceptions of the interface.</li>
+                </ul>
+            </div>
+
+            <div class="content-section focus-areas">
+                <h2>Focus</h2>
+                <ul>
+                    <li>How easily users could locate and access key information, such as annual reports and shareholder letters.</li>
+                    <li>The effectiveness of the website's navigation menu, search functionality, and overall information organization.</li>
+                    <li>The speed and ease with which users could complete specific tasks related to their goals (ex: downloading a financial report, finding a sustainability partner).</li>
+                    <li>Overall user perceptions of the website's design, usability, and trustworthiness.</li>
+                </ul>
+            </div>
+
+            <div class="image-gallery-section">
+                <div class="image-gallery-column">
+                    <img src="1News-Berkshire.png" alt="News Section Mockup"> </div>
+                <div class="image-gallery-column">
+                    <img src="1Sustainability-Berkshire.png" alt="Sustainability Section Mockup"> </div>
+                <div class="image-gallery-column">
+                    <img src="1Documents-Berkshire.png" alt="Documents Section Mockup"> </div>
+            </div>
+
+            <div class="content-section wireframes-section">
+                <h2>Wireframes</h2>
+                <p>Using Figma, I translated my first sketches into low-fidelity wireframes. The wireframes focused on strategic content placement, readability, and intuitive navigation to support the project's goals.</p>
+                <ul>
+                    <li>I implemented a reading structure that guides users naturally from the top navigation bar, downwards.</li>
+                    <li>The wireframes included dedicated sections for company documents and news letters.</li>
+                    <li>New design features a minimalist design with streamlined navigation for easier access.</li>
+                </ul>
+            </div>
+
+            <div class="lessons-next-steps-section">
+                <div class="lessons-learned-column">
+                    <h3>Lessons Learned</h3>
+                    <ul>
+                        <li>Find the right balance between modern design principles and preserving a brand's established identity.</li>
+                        <li>Cater to diverse user groups (shareholders, employees, students) by addressing their specific needs and pain points.</li>
+                        <li>Successfully update a brand's digital presence by updating typography, color schemes, and adding features to improve accessibility.</li>
+                    </ul>
+                </div>
+                <div class="next-steps-column">
+                    <h3>Next Steps</h3>
+                    <ul>
+                        <li>Create a fully interactive prototype using tools like Figma to test the website's functionality, incorporating the recommended error handling, help/FAQ section, and search filter enhancements.</li>
+                        <li>Perform further usability testing with users who fit the created personas and ask them to perform the same tasks to check if those usability changes did improve their experience on the site.</li>
+                        <li>Create detailed design specifications, including style guides and interaction details, to provide clear guidance for developers during implementation.</li>
+                        <li>Focus on documenting the improved error handling, help/FAQ functionality, and search filter implementations.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <a href="ux-ui.html" class="back-link back-link-bottom">
+                <i class="fas fa-arrow-left"></i> Back to Case Studies
+            </a>
+            </main>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div>jdlee6526@gmail.com</div>
+            <div>
+                <a href="https://www.linkedin.com/in/joanna-lee-jdlee/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

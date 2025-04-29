@@ -132,7 +132,7 @@
         }
         .project-header img {
            max-width: 50%;
-           min-width: 300px; /* Added min-width back for consistency */
+           min-width: 300px;
            height: auto;
            border-radius: 8px;
            display: block;
@@ -206,11 +206,11 @@
 
         /* === CHANGED flex ratio === */
         .original-website-section .text-column {
-            flex: 1; /* Text column takes 1 part */
+            flex: 7; /* Text column takes 7 parts */
             min-width: 0;
         }
         .original-website-section .image-column {
-            flex: 2; /* Image column takes 2 parts */
+            flex: 10; /* Image column takes 10 parts (0.7 : 1 ratio) */
             min-width: 0;
         }
         /* === END CHANGE === */
@@ -239,9 +239,7 @@
         }
 
         .original-website-section .image-column img {
-             /* === CHANGED image sizing === */
              max-width: 100%; /* Allow image to fill its column */
-             /* === END CHANGE === */
              height: auto;
              display: block;
              border-radius: 8px;
@@ -430,10 +428,14 @@
                  margin-top: 30px;
                  padding: 20px 0;
             }
-             /* Ensure image is centered when stacked */
+            /* Reset flex values when stacked */
+             .original-website-section .text-column,
+             .original-website-section .image-column {
+                flex: none; /* Disable flex sizing */
+             }
              .original-website-section .image-column img {
                  max-width: 90%; /* Or 100% if preferred */
-                 margin: 0 auto;
+                 margin: 0 auto; /* Center image when stacked */
              }
 
             .content-section h2 { font-size: 1.4em; margin-bottom: 15px; }
@@ -529,8 +531,7 @@
                  <div class="image-column"> <img src="Original-Brick-Executive.jpg" alt="Original Brick Executive Website Screenshot">
                  </div>
             </div>
-            <div class="content-section personas-test-plan">
-                 <h2>Key Design Solutions</h2>
+            <div class="content-section personas-test-plan"> <h2>Key Design Solutions</h2>
                  <ul>
                      <li>Visual Concept Change: I drastically changed the visual style of the website's homepage to use a clean, modern aesthetic with strong typography and whitespace. This was to create a contemporary, sophisticated, high-end impression that aligns with the premier boutique firm. This overall increases readability and brand perception.</li>
                      <li>Restructured Navigation: The main navigation menu has been changed to "about", "representation", "careers", and "booking". I also added a search icon. This simplifies the site's structure and focuses the user pathway towards key actions like the representation the company can provide, booking services, and open positions. The terminology used in the menu is intended to resonate directly with potential clients or candidates for jobs.</li>
@@ -541,7 +542,6 @@
                      <li>Redesigned Footer: I changed the footer of the home page to include the main navigation links, social media accounts, and email. This is to provide users with easy access to the company's social media profiles, improving user experience and connectivity. </li>
                  </ul>
              </div>
-
 
             <div class="image-gallery-section">
                 <div class="image-gallery-column">

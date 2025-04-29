@@ -257,7 +257,6 @@
         .role-image-section {
             margin-top: 40px;
             padding-bottom: 20px;
-            /* border-top: 1px solid #eee; Moved border logic around new section */
         }
         .role-description h2 {
             font-size: 1.6em;
@@ -279,7 +278,7 @@
         .role-description li {
             margin-bottom: 15px;
         }
-         /* .role-image related styles removed as image moved */
+        /* Styles related to image removed from here */
 
         /* Content Sections Styling (includes Wireframes) */
         .content-section {
@@ -318,15 +317,15 @@
            color: #444;
         }
 
-        /* Image Gallery Section Styling */
+        /* Image Gallery Section Styling (Re-used for 2-column images) */
         .image-gallery-section {
             display: flex;
-            gap: 20px;
-            margin-top: 40px;
+            gap: 20px; /* Space between images */
+            margin-top: 40px; /* Space above */
             align-items: flex-start;
         }
         .image-gallery-column {
-            flex: 1;
+            flex: 1; /* Equal width */
             min-width: 0; /* Prevent flex overflow */
         }
         .image-gallery-column img {
@@ -335,6 +334,11 @@
             display: block;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        /* Specific margin for the gallery after My Role */
+        .role-image-section + .image-gallery-section {
+             margin-top: 20px; /* Less space after role section */
+             padding-bottom: 20px; /* Space below images */
         }
 
         /* Lessons Learned / Next Steps Section Styling */
@@ -405,14 +409,13 @@
                  padding: 20px 30px;
              }
              .project-header {
-                 flex-direction: column; /* Stack text and image */
-                 align-items: flex-start; /* Align stacked items to the left */
+                 flex-direction: column;
+                 align-items: flex-start;
              }
-             /* Adjust header image size when stacked */
              .project-header img {
-                 max-width: 80%; /* Slightly less than full width */
-                 min-width: initial; /* Reset min-width */
-                 margin-top: 20px; /* Add space above image */
+                 max-width: 80%;
+                 min-width: initial;
+                 margin-top: 20px;
              }
         }
 
@@ -441,7 +444,6 @@
              }
              .nav-links a { margin-left: 0; }
 
-            /* Allow header image to take full width when stacked on small screens */
              .project-header img { max-width: 100%; }
 
             .overview-goal {
@@ -474,11 +476,18 @@
              .content-section h2 { font-size: 1.4em; margin-bottom: 15px; }
              .content-section p, .content-section ul { line-height: 1.6; }
 
+            /* Responsive Image Gallery */
             .image-gallery-section {
                  flex-direction: column;
                  gap: 25px;
                  margin-top: 30px;
             }
+             /* Specific adjustments for the 2-image gallery spacing on mobile */
+             .role-image-section + .image-gallery-section {
+                  margin-top: 20px;
+                  padding-bottom: 15px;
+             }
+
 
             .lessons-next-steps-section {
                  flex-direction: column;
@@ -524,8 +533,8 @@
                     <h1 class="project-title">Campfire Travel</h1>
                     <p class="project-subtitle">CMST 295 Fundamentals of Digial Design</p>
                 </div>
-                <img src="Home-Campfire-Travel.png" alt="Campfire Travel website homepage design">
-            </div>
+                <img src="Home-Campfire-Travel.png" alt="Campfire Travel website homepage design"> </div>
+
             <div class="overview-goal">
                 <div class="overview-section">
                     <h2 class="overview-title">Overview</h2>
@@ -567,8 +576,7 @@
                     </ul>
                 </div>
                 <div class="image-column">
-                    <img src="Magazine-Campfire-Travel.png" alt="Original Campfire Travel eMagazine interface showing layout issues">
-                </div>
+                    <img src="Magazine-Campfire-Travel.png" alt="Original Campfire Travel eMagazine interface showing layout issues"> </div>
             </div>
 
             <div class="role-image-section">
@@ -580,7 +588,13 @@
                         <li>To promote exploration and increase engagement, I incorporated clickable components throughout the wireframes, ensuring users could easily navigate and interact with key site areas.</li>
                     </ul>
                      </div>
-             </div> <div class="lessons-next-steps-section">
+             </div> <div class="image-gallery-section image-gallery-two-column">
+                 <div class="image-gallery-column">
+                     <img src="2Campfire-Travel.png" alt="Campfire Travel Wireframe Example 1"> </div>
+                 <div class="image-gallery-column">
+                     <img src="3Campfire-Travel.png" alt="Campfire Travel Wireframe Example 2"> </div>
+             </div>
+             <div class="lessons-next-steps-section">
                 <div class="lessons-learned-column">
                     <h3>Lessons Learned</h3>
                     <ul>

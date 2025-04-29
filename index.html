@@ -1,193 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joanna Lee's Portfolio - Home</title>
-    <!-- Google Fonts: Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background-color: #e2ebf5;
-            color: #333;
-            font-family: 'Poppins', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        .site-wrapper {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        nav {
-            background: #e2ebf5;
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #ddd;
-        }
-        .nav-brand {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: #333;
-            text-decoration: none;
-        }
-        .nav-links a {
-            margin-left: 40px;
-            text-decoration: none;
-            color: #555;
-            font-size: 1em;
-        }
-        .nav-links a:hover {
-            color: #000;
-        }
-        .container {
-            display: flex;
-            align-items: flex-start;
-            padding: 40px;
-            max-width: 1200px;
-            margin: 20px auto;
-            flex: 1;
-        }
-        .image-column {
-            flex: 1;
-            padding-right: 30px;
-        }
-        .image-column img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 8px;
-        }
-        .text-column {
-            flex: 2;
-            padding-left: 30px;
-        }
-        h1 {
-            font-size: 2.8em;
-            margin-bottom: 15px;
-        }
-        .section-tagline {
-            font-size: 1.5em;
-            color: #888;
-            font-weight: 500;
-            margin-top: 25px;
-            margin-bottom: 25px;
-            letter-spacing: 0.02em;
-        }
-        .education-section {
-            background: #f2f5fa;
-            border-radius: 8px;
-            padding: 24px 28px;
-            margin: 32px 0 0 0;
-            box-shadow: 0 2px 8px rgba(120,150,185,0.05);
-        }
-        .education-section h2 {
-            margin-top: 0;
-            font-size: 1.3em;
-            color: #7996B9;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-        }
-        .education-details {
-            margin-bottom: 10px;
-        }
-        .education-meta {
-            font-size: 1em;
-            color: #555;
-            margin-bottom: 8px;
-        }
-        .education-degree {
-            font-size: 1.07em;
-            font-weight: 500;
-            margin-bottom: 12px;
-        }
-        .education-list {
-            margin: 0 0 0 18px;
-            padding: 0;
-        }
-        .education-list li {
-            margin-bottom: 7px;
-            font-size: 1em;
-        }
-        p {
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-        footer {
-            background: #f2f5fa;
-            padding: 15px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid #ddd;
-            font-size: 1em;
-            color: #555;
-        }
-        footer a {
-            color: #555;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        footer a:hover {
-            color: #000;
-            text-decoration: underline;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joanna Lee's Portfolio - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /* Apply box-sizing globally */
+        }
+        *, *:before, *:after {
+            box-sizing: inherit; /* Inherit box-sizing */
+        }
+        body {
+            background-color: #e2ebf5;
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .site-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%; /* Ensure site wrapper takes full width */
+        }
+
+        /* === UPDATED Navigation Bar Styles === */
+        nav {
+            background: #e2ebf5;
+            padding: 15px 0; /* Vertical padding only */
+            border-bottom: 1px solid #ddd;
+            width: 100%; /* Span full width */
+            flex-shrink: 0; /* Prevent nav shrinking */
+        }
+        .nav-container {
+            width: 100%; /* Container takes full width */
+            padding: 0 40px; /* Horizontal padding for edge spacing */
+            box-sizing: border-box; /* Include padding in width */
+            display: flex;
+            justify-content: space-between; /* Pushes items to edges */
+            align-items: center;
+        }
+        .nav-brand {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+            flex-shrink: 0; /* Prevent brand shrinking */
+        }
+        .nav-links {
+             display: flex; /* Align links horizontally */
+             align-items: center;
+        }
+        .nav-links a {
+            margin-left: 40px;
+            text-decoration: none;
+            color: #555;
+            font-size: 1em;
+            /* Added for consistency */
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            white-space: nowrap; /* Prevent links wrapping */
+        }
+        .nav-links a:hover {
+            color: #000;
+        }
+        /* === END UPDATED Navigation Bar Styles === */
+
+        .container { /* Styles for main content area */
+            display: flex;
+            align-items: flex-start;
+            padding: 40px;
+            max-width: 1200px; /* Limit content width */
+            width: 90%; /* Responsive width */
+            margin: 40px auto; /* Center container and add vertical margin */
+            flex: 1; /* Allow container to grow if needed */
+            background-color: #fff; /* White background for content */
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        .image-column {
+            flex: 1;
+            padding-right: 30px;
+            min-width: 0; /* Prevent flex overflow */
+        }
+        .image-column img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+        .text-column {
+            flex: 2;
+            padding-left: 30px;
+            min-width: 0; /* Prevent flex overflow */
+        }
+        h1 {
+            font-size: 2.8em;
+            margin-bottom: 15px;
+            margin-top: 0; /* Remove default top margin */
+            color: #222;
+        }
+        .section-tagline {
+            font-size: 1.5em;
+            color: #888;
+            font-weight: 500;
+            margin-top: 5px; /* Reduced top margin */
+            margin-bottom: 25px;
+            letter-spacing: 0.02em;
+        }
+        .education-section {
+            background: #f8f9fa; /* Slightly different background */
+            border-radius: 8px;
+            padding: 24px 28px;
+            margin-top: 32px; /* Keep margin */
+            box-shadow: 0 2px 8px rgba(120,150,185,0.05);
+        }
+        .education-section h2 {
+            margin-top: 0;
+            font-size: 1.3em;
+            color: #555; /* Adjusted color slightly */
+            font-weight: 600;
+            letter-spacing: 0.02em;
+             padding-bottom: 8px;
+             border-bottom: 1px solid #eee; /* Add separator */
+             margin-bottom: 15px; /* Space below heading */
+        }
+        .education-details {
+            margin-bottom: 10px;
+        }
+        .education-meta {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 8px;
+        }
+        .education-degree {
+            font-size: 1.07em;
+            font-weight: 500;
+            margin-bottom: 12px;
+            color: #333;
+        }
+        .education-list {
+            margin: 0 0 0 18px;
+            padding: 0;
+            list-style: disc;
+        }
+        .education-list li {
+            margin-bottom: 7px;
+            font-size: 1em;
+             color: #555;
+             line-height: 1.6;
+        }
+        p { /* General paragraph styles */
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: #f2f5fa;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #ddd;
+            font-size: 1em;
+            color: #555;
+            flex-shrink: 0; /* Prevent footer shrinking */
+        }
+        /* Using direct children instead of .footer-container */
+        footer a {
+            color: #555;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        footer a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+             nav { padding: 15px 20px; } /* Adjust nav padding */
+             .nav-container { padding: 0 20px; } /* Adjust container padding */
+             .nav-links a { margin-left: 20px; }
+             .container {
+                 flex-direction: column; /* Stack image and text */
+                 width: 90%;
+                 margin: 30px auto;
+                 padding: 30px;
+             }
+             .image-column {
+                 padding-right: 0;
+                 padding-bottom: 30px; /* Space below image */
+                 text-align: center; /* Center image */
+             }
+             .image-column img {
+                  max-width: 80%; /* Don't let image take full width */
+                  margin: 0 auto;
+             }
+             .text-column {
+                 padding-left: 0; /* Remove padding */
+                 flex: 1; /* Reset flex */
+             }
+             footer { padding: 15px 20px; }
+         }
+
+        @media (max-width: 768px) {
+             .nav-container {
+                  padding: 0 20px; /* Ensure consistent padding */
+                  flex-direction: column; /* Stack nav items */
+                  align-items: flex-start;
+                  gap: 10px;
+             }
+             nav { padding: 10px 20px; } /* Adjust overall nav padding */
+             .nav-brand { margin-bottom: 0; } /* Reset margin */
+             .nav-links {
+                  margin-left: 0;
+                  display: flex;
+                  flex-direction: column; /* Stack links */
+                  align-items: flex-start;
+                  width: 100%;
+                  gap: 10px; /* Space between links */
+             }
+             .nav-links a { margin-left: 0; }
+
+             .container {
+                 width: 95%;
+                 padding: 20px;
+                 margin: 20px auto;
+             }
+             .image-column img { max-width: 90%; }
+             h1 { font-size: 2.2em; }
+             p { font-size: 1em; }
+             .section-tagline { font-size: 1.2em; }
+
+             footer { padding: 10px 20px; flex-direction: column; text-align: center; gap: 5px; }
+        }
+
+    </style>
 </head>
 <body>
-    <div class="site-wrapper">
-        <nav>
-            <a href="index.html" class="nav-brand">Joanna Lee</a>
-            <div class="nav-links">
-                <a href="index.html">HOME</a>
-                <a href="market-research.html">MARKET RESEARCH</a>
-                <a href="social-media-marketing.html">SOCIAL MEDIA MARKETING</a>
-                <a href="ux-ui.html">UX/UI</a>
-            </div>
-        </nav>
-        <div class="container">
-            <div class="image-column">
-                <img src="pfp.jpg" alt>
-            </div>
-            <div class="text-column">
-                <h1>Hello, I'm <span style="color: #7996B9; font-style: italic;">Joanna</span></h1>
-                <div class="section-tagline">Marketing, Community, Design</div>
-                <p>
-                    As a marketing major with a passion for digital design, I'm excited to pursue opportunities that combine both marketing and UX/UI. With a strong background in social media management and community engagement, I bring a user-centric and strategic approach to digital experiences. My experience as a community partner and manager taught me to understand diverse audience needs, which I apply to creating intuitive designs and impactful marketing strategies.
-                </p>
-                <section class="education-section">
-                    <h2>Education</h2>
-                    <div class="education-details">
-                        <div class="education-meta">
-                            University of Maryland Global Campus<br>
-                            Aug 2023 - May 2026
-                        </div>
-                        <div class="education-degree">
-                            B.S. Marketing &mdash; Minor in Web &amp; Digital Design &mdash; Certificate in Digital Marketing
-                        </div>
-                        <ul class="education-list">
-                            <li>Academic Achievements: 3.9 Cumulative, Dean's List Spring 2024 &amp; Fall 2024</li>
-                            <li>American Marketing Association (AMA): Student Member, Networked with marketing professionals</li>
-                            <li>Graphic Designer Student Association: Student Member, Improved Photoshop and Illustrator skills</li>
-                        </ul>
-                    </div>
-                </section>
-            </div>
-        </div>
-        <footer>
-            <div>jdlee6526@gmail.com</div>
-            <div>
-                <a href="https://www.linkedin.com/in/joanna-lee-jdlee/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </div>
-        </footer>
-    </div>
+    <div class="site-wrapper">
+        <nav>
+            <div class="nav-container"> <a href="index.html" class="nav-brand">Joanna Lee</a>
+                <div class="nav-links">
+                    <a href="index.html">HOME</a>
+                    <a href="market-research.html">MARKET RESEARCH</a>
+                    <a href="social-media-marketing.html">SOCIAL MEDIA MARKETING</a>
+                    <a href="ux-ui.html">UX/UI</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container">
+            <div class="image-column">
+                 <img src="pfp.jpg" alt="Joanna Lee Profile Picture">
+            </div>
+            <div class="text-column">
+                <h1>Hello, I'm <span style="color: #7996B9; font-style: italic;">Joanna</span></h1>
+                <div class="section-tagline">Marketing, Community, Design</div>
+                <p>
+                    As a marketing major with a passion for digital design, I'm excited to pursue opportunities that combine both marketing and UX/UI. With a strong background in social media management and community engagement, I bring a user-centric and strategic approach to digital experiences. My experience as a community partner and manager taught me to understand diverse audience needs, which I apply to creating intuitive designs and impactful marketing strategies.
+                </p>
+                <section class="education-section">
+                    <h2>Education</h2>
+                    <div class="education-details">
+                        <div class="education-meta">
+                            University of Maryland Global Campus<br>
+                            Aug 2023 - May 2026
+                        </div>
+                        <div class="education-degree">
+                            B.S. Marketing &mdash; Minor in Web &amp; Digital Design &mdash; Certificate in Digital Marketing
+                        </div>
+                        <ul class="education-list">
+                            <li>Academic Achievements: 3.9 Cumulative, Dean's List Spring 2024 &amp; Fall 2024</li>
+                            <li>American Marketing Association (AMA): Student Member, Networked with marketing professionals</li>
+                            <li>Graphic Designer Student Association: Student Member, Improved Photoshop and Illustrator skills</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <footer>
+            <div>jdlee6526@gmail.com</div>
+            <div>
+                <a href="https://www.linkedin.com/in/joanna-lee-jdlee/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>

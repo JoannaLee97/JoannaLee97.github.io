@@ -11,57 +11,50 @@
             height: 100%;
             margin: 0;
             padding: 0;
-            box-sizing: border-box; /* Apply box-sizing globally */
+            box-sizing: border-box;
         }
         *, *:before, *:after {
-            box-sizing: inherit; /* Inherit box-sizing */
+            box-sizing: inherit;
         }
         body {
             background-color: #e2ebf5;
             color: #333;
             font-family: 'Poppins', sans-serif;
-            min-height: 100vh;
+            min-height: 100vh; /* Ensures body takes at least full viewport height */
             display: flex;
             flex-direction: column;
         }
         .site-wrapper {
-            flex: 1;
+            flex: 1; /* Allows wrapper to grow and fill body space */
             display: flex;
             flex-direction: column;
-            overflow: hidden; /* Prevent unexpected scrollbars */
+            /* overflow: hidden; */ /* REMOVED to allow natural page scrolling if content exceeds viewport */
         }
 
         /* === Navigation Bar Styles (Matched to Code 1) === */
         nav {
             background: #e2ebf5;
-            padding: 15px 40px; /* Vertical and Horizontal padding */
+            padding: 15px 40px;
             display: flex;
-            justify-content: space-between; /* Pushes brand left, links right */
+            justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid #ddd;
             flex-shrink: 0; /* Prevent nav from shrinking */
         }
-        /* Removed .nav-container styles as it's not used in Code 1's structure */
         .nav-brand {
             font-size: 1.5em;
             font-weight: bold;
             color: #333;
             text-decoration: none;
-            /* flex-shrink removed */
-        }
-        .nav-links {
-             /* display: flex; removed */
-             /* align-items: center; removed */
         }
         .nav-links a {
-            margin-left: 40px; /* Spacing between links */
+            margin-left: 40px;
             text-decoration: none;
             color: #555;
             font-size: 1em;
             font-weight: 500;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            /* white-space: nowrap; removed */
         }
         .nav-links a:hover {
             color: #000;
@@ -73,17 +66,18 @@
             display: flex;
             align-items: flex-start;
             padding: 40px;
-            max-width: 1200px; /* Limit content width */
-            width: 90%; /* Responsive width */
-            margin: 10px auto; /* Center container and add vertical margin */
-            flex: 1; /* Allow container to grow if needed */
-            background-color: #e2ebf5; /* White background for content */
+            max-width: 1200px;
+            width: 90%;
+            margin: 10px auto; /* Vertical margin added */
+            /* flex: 1; */ /* We might not need flex:1 here anymore if page scrolls */
+            background-color: #e2ebf5;
             border-radius: 8px;
+            /* Consider adding flex-grow: 1 if it needs to push footer down independently */
         }
         .image-column {
             flex: 1;
             padding-right: 30px;
-            min-width: 0; /* Prevent flex overflow */
+            min-width: 0;
         }
         .image-column img {
             max-width: 100%;
@@ -94,38 +88,38 @@
         .text-column {
             flex: 2;
             padding-left: 30px;
-            min-width: 0; /* Prevent flex overflow */
+            min-width: 0;
         }
         h1 {
             font-size: 2.8em;
             margin-bottom: 15px;
-            margin-top: 0; /* Remove default top margin */
+            margin-top: 0;
             color: #222;
         }
         .section-tagline {
             font-size: 1.5em;
             color: #888;
             font-weight: 500;
-            margin-top: 5px; /* Reduced top margin */
+            margin-top: 5px;
             margin-bottom: 25px;
             letter-spacing: 0.02em;
         }
         .education-section {
-            background: #f2f5fa; /* Slightly different background */
+            background: #f2f5fa;
             border-radius: 8px;
             padding: 24px 28px;
-            margin-top: 32px; /* Keep margin */
+            margin-top: 32px;
             box-shadow: 0 2px 8px rgba(120,150,185,0.05);
         }
         .education-section h2 {
             margin-top: 0;
             font-size: 1.3em;
-            color: #555; /* Adjusted color slightly */
+            color: #555;
             font-weight: 600;
             letter-spacing: 0.02em;
              padding-bottom: 8px;
-             border-bottom: 1px solid #eee; /* Add separator */
-             margin-bottom: 15px; /* Space below heading */
+             border-bottom: 1px solid #eee;
+             margin-bottom: 15px;
         }
         .education-details {
             margin-bottom: 10px;
@@ -152,7 +146,7 @@
              color: #555;
              line-height: 1.6;
         }
-        p { /* General paragraph styles */
+        p {
             font-size: 1.1em;
             line-height: 1.7;
             color: #444;
@@ -169,8 +163,8 @@
             font-size: 1em;
             color: #555;
             flex-shrink: 0; /* Prevent footer shrinking */
+             /* margin-top: auto; */ /* Optional: pushes footer down if content is short */
         }
-        /* Using direct children instead of .footer-container */
         footer a {
             color: #555;
             text-decoration: none;
@@ -183,7 +177,7 @@
 
         /* Responsive Adjustments */
         @media (max-width: 992px) {
-            /* Nav adjustments (Matched to Code 1) */
+            /* Nav adjustments */
             nav {
                  padding-left: 20px;
                  padding-right: 20px;
@@ -191,66 +185,63 @@
             .nav-links a {
                  margin-left: 20px;
             }
-            /* Removed .nav-container rule */
 
-            /* Container adjustments (from Code 2) */
+            /* Container adjustments */
              .container {
-                 flex-direction: column; /* Stack image and text */
+                 flex-direction: column;
                  width: 90%;
-                 margin: 30px auto;
+                 margin: 30px auto; /* Adjusted margin */
                  padding: 30px;
              }
              .image-column {
                  padding-right: 0;
-                 padding-bottom: 30px; /* Space below image */
-                 text-align: center; /* Center image */
+                 padding-bottom: 30px;
+                 text-align: center;
              }
              .image-column img {
-                  max-width: 80%; /* Don't let image take full width */
+                  max-width: 80%;
                   margin: 0 auto;
              }
              .text-column {
-                 padding-left: 0; /* Remove padding */
-                 flex: 1; /* Reset flex */
+                 padding-left: 0;
+                 /* flex: 1; */ /* Might not need flex reset if container isn't flex:1 */
              }
-             /* Footer adjustments (from Code 2) */
+             /* Footer adjustments */
              footer { padding: 15px 20px; }
         }
 
         @media (max-width: 768px) {
-            /* Nav adjustments (Matched to Code 1) */
+            /* Nav adjustments */
             nav {
-                padding: 10px 20px; /* Padding adjusted */
-                flex-direction: column; /* Stack nav items */
-                align-items: flex-start; /* Align stacked items left */
+                padding: 10px 20px;
+                flex-direction: column;
+                align-items: flex-start;
             }
             .nav-brand {
-                margin-bottom: 10px; /* Add space below brand when stacked */
+                margin-bottom: 10px;
             }
             .nav-links {
                 margin-left: 0;
-                display: flex; /* Make links container flex */
-                flex-wrap: wrap; /* Allow links to wrap */
-                gap: 15px; /* Spacing for wrapped links */
-                /* Removed Code 2's stacking/width rules */
+                display: flex;
+                flex-wrap: wrap;
+                gap: 15px;
             }
             .nav-links a {
-                margin-left: 0; /* Remove left margin on small screens */
+                margin-left: 0;
             }
-            /* Removed .nav-container rule */
 
-            /* Container adjustments (from Code 2) */
+            /* Container adjustments */
              .container {
                  width: 95%;
                  padding: 20px;
-                 margin: 20px auto;
+                 margin: 20px auto; /* Adjusted margin */
              }
              .image-column img { max-width: 90%; }
              h1 { font-size: 2.2em; }
              p { font-size: 1em; }
              .section-tagline { font-size: 1.2em; }
 
-             /* Footer adjustments (from Code 2) */
+             /* Footer adjustments */
              footer { padding: 10px 20px; flex-direction: column; text-align: center; gap: 5px; }
         }
 
@@ -294,7 +285,10 @@
                         </ul>
                     </div>
                 </section>
-            </div>
+                <p style="margin-top: 30px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam atque, voluptatum illum quod incidunt perferendis unde ducimus sed culpa inventore et quasi, vitae molestiae laudantium earum sapiente ad? Voluptas, pariatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam atque, voluptatum illum quod incidunt perferendis unde ducimus sed culpa inventore et quasi, vitae molestiae laudantium earum sapiente ad? Voluptas, pariatur.</p>
+                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam atque, voluptatum illum quod incidunt perferendis unde ducimus sed culpa inventore et quasi, vitae molestiae laudantium earum sapiente ad? Voluptas, pariatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam atque, voluptatum illum quod incidunt perferendis unde ducimus sed culpa inventore et quasi, vitae molestiae laudantium earum sapiente ad? Voluptas, pariatur.</p>
+                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam atque, voluptatum illum quod incidunt perferendis unde ducimus sed culpa inventore et quasi, vitae molestiae laudantium earum sapiente ad? Voluptas, pariatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam atque, voluptatum illum quod incidunt perferendis unde ducimus sed culpa inventore et quasi, vitae molestiae laudantium earum sapiente ad? Voluptas, pariatur.</p>
+                </div>
         </div>
         <footer>
             <div>jdlee6526@gmail.com</div>

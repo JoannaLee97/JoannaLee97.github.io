@@ -12,33 +12,29 @@
             height: 100%;
             margin: 0;
             padding: 0;
-            box-sizing: border-box; /* Apply box-sizing globally */
+            box-sizing: border-box;
         }
         *, *:before, *:after {
-            box-sizing: inherit; /* Inherit box-sizing */
+            box-sizing: inherit;
         }
         body {
             background-color: #e2ebf5;
             color: #333;
             font-family: 'Poppins', sans-serif;
-            min-height: 100vh; /* Ensure body takes full viewport height */
+            min-height: 100vh;
             display: flex;
-            flex-direction: column; /* Stack site-wrapper vertically */
+            flex-direction: column;
         }
         .site-wrapper {
-            flex: 1; /* Allow site-wrapper to grow and fill space */
+            flex: 1; /* Grow to fill space */
             display: flex;
-            flex-direction: column; /* Stack nav, portfolio-container, footer vertically */
-            width: 100%;
-            max-width: 1600px; /* Optional: Max width for very large screens */
-            margin: 0 auto; /* Center site wrapper */
-            background-color: #f2f5fa; /* Background for the main area including sidebar */
-             box-shadow: 0 0 20px rgba(0,0,0,0.05); /* Optional shadow */
+            flex-direction: column; /* Stack nav, main area, footer */
+            overflow: hidden; /* Prevent unexpected scrollbars */
         }
 
         /* Consistent Navigation Bar Styles */
         nav {
-            background: #e2ebf5; /* Match body background */
+            background: #e2ebf5;
             padding: 15px 40px;
             display: flex;
             justify-content: space-between;
@@ -46,6 +42,7 @@
             border-bottom: 1px solid #ddd;
             flex-shrink: 0; /* Prevent nav from shrinking */
         }
+        /* Removed .nav-container styles as it wasn't used in the source nav */
         .nav-brand {
             font-size: 1.5em;
             font-weight: bold;
@@ -57,36 +54,39 @@
             text-decoration: none;
             color: #555;
             font-size: 1em;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         .nav-links a:hover {
             color: #000;
         }
 
-        /* NEW: Portfolio Container (holds Sidebar + Main Content) */
+        /* Main Layout Container (Sidebar + Content) */
         .portfolio-container {
-             display: flex; /* Arrange sidebar and main content side-by-side */
-             flex: 1; /* Allow this container to grow and fill space between nav and footer */
-             overflow: hidden; /* Prevent potential overflow issues */
-             background-color: #f2f5fa; /* Match sidebar */
+            display: flex; /* Arrange sidebar and content area */
+            flex: 1; /* Allow this section to grow and fill space */
+            width: 100%;
+            overflow: hidden; /* Prevent internal scrollbars if content too wide */
         }
 
-        /* NEW: Sidebar Styles (from reference) */
+        /* Sidebar Styles */
         .sidebar {
             width: 280px; /* Fixed width */
             flex-shrink: 0; /* Prevent sidebar from shrinking */
-            background-color: #f2f5fa; /* Match container */
+            background-color: #f2f5fa; /* Sidebar background */
             padding: 40px 30px;
             display: flex;
-            flex-direction: column;
-            border-right: 1px solid #e0e5ec; /* Slightly softer border */
-            overflow-y: auto; /* Allow sidebar scrolling if needed */
+            flex-direction: column; /* Stack content vertically */
+            border-right: 1px solid #e9ecef; /* Separator */
+            overflow-y: auto; /* Allow sidebar to scroll if content overflows */
         }
+
         .sidebar-content {
-             flex-grow: 1; /* Allow content to push links down */
-             /* Styles for elements inside sidebar-content */
+             flex-grow: 1; /* Allow content to take space */
+             /* Add margin-bottom if needed to push links down consistently */
         }
-        /* Styles from reference for sidebar elements - ADDED */
-        .sidebar .name { /* Added rule if needed */
+        .sidebar .name { /* Example style if needed */
             font-size: 1.8em;
             font-weight: 600;
             color: #343a40;
@@ -106,11 +106,11 @@
         }
         .sidebar .social-links {
              display: flex;
-             justify-content: center; /* Center items horizontally */
+             justify-content: center; /* Center link(s) */
              align-items: center;
-             flex-wrap: wrap; /* Allow wrapping if needed */
-             gap: 15px; /* Space between links */
-             margin-top: auto; /* Push to bottom if sidebar content allows */
+             flex-wrap: wrap;
+             gap: 10px;
+             margin-top: auto; /* Push to bottom */
              padding-top: 20px; /* Space above links */
         }
         .sidebar .social-links a {
@@ -120,57 +120,46 @@
             display: inline-flex;
             align-items: center;
             line-height: 1;
-             transition: color 0.2s ease;
+            transition: color 0.2s ease;
         }
         .sidebar .social-links a i {
-            font-size: 1.5em; /* Icon size */
+            font-size: 1.5em;
         }
         .sidebar .social-links a.resume-link {
              font-size: 0.9em;
              font-weight: 500;
-             padding: 8px 15px; /* Adjusted padding */
+             padding: 5px 10px;
              border: 1px solid #ced4da;
              border-radius: 4px;
              background-color: #e9ecef;
-             color: #495057; /* Text color */
-             transition: background-color 0.2s ease, border-color 0.2s ease;
+             transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+             color: #495057; /* Ensure initial color */
         }
          .sidebar .social-links a.resume-link i {
-             font-size: 1em; /* Icon size inside link */
-             margin-left: 8px; /* Space before icon */
+             font-size: 1em;
+             margin-left: 5px;
              margin-right: 0;
          }
         .sidebar .social-links a:hover {
-            color: #007bff; /* Hover color for icons */
+            color: #007bff;
         }
         .sidebar .social-links a.resume-link:hover {
             background-color: #dee2e6;
             border-color: #adb5bd;
-             color: #343a40; /* Darker text on hover */
+            color: #343a40;
         }
 
-        /* NEW: Main Content Area Styles */
-        .main-content {
-            flex: 1; /* Allow main content to take remaining width */
-            padding: 40px; /* Padding around content */
-            overflow-y: auto; /* Allow content scrolling */
-            background-color: #fff; /* White background for content */
-        }
-        .main-content h1 { /* Example style */
-             font-size: 2.2em;
-             margin-bottom: 20px;
-             color: #333;
-        }
-        .main-content p { /* Example style */
-             font-size: 1.1em;
-             line-height: 1.7;
-             color: #555;
+        /* Placeholder for Content Area Styles (where your page content goes) */
+        .content-area-placeholder {
+            flex-grow: 1; /* Takes remaining width */
+            padding: 40px 50px; /* Example padding */
+            overflow-y: auto; /* Allow scrolling */
+            background-color: #fff; /* Example background */
         }
 
-
-        /* Footer Styles */
+        /* Consistent Footer Styles */
         footer {
-            background: #e2ebf5; /* Match body/nav background */
+            background: #f2f5fa; /* Match sidebar/body */
             padding: 15px 40px;
             display: flex;
             justify-content: space-between;
@@ -178,9 +167,9 @@
             border-top: 1px solid #ddd;
             font-size: 1em;
             color: #555;
-            flex-shrink: 0; /* Prevent footer from shrinking */
-            width: 100%; /* Ensure footer takes full width within site-wrapper */
+            flex-shrink: 0; /* Prevent footer shrinking */
         }
+        /* Removed .footer-container styles as it wasn't used in the source footer */
         footer a {
             color: #555;
             text-decoration: none;
@@ -191,86 +180,72 @@
             text-decoration: underline;
         }
 
-         /* Responsive Adjustments */
+        /* Responsive Adjustments */
         @media (max-width: 992px) {
-            .portfolio-container {
-                 flex-direction: column; /* Stack sidebar and content */
-             }
-             .sidebar {
-                 width: 100%; /* Sidebar takes full width */
-                 border-right: none; /* Remove right border */
-                 border-bottom: 1px solid #e0e5ec; /* Add bottom border */
-                 height: auto; /* Allow height to adjust */
-                 overflow-y: visible; /* Disable scroll for stacked sidebar */
-                 padding: 20px 30px; /* Adjust padding */
-             }
-             .sidebar .social-links {
-                 margin-top: 20px; /* Adjust spacing */
-             }
-             .main-content {
-                 padding: 30px; /* Adjust padding */
-                 overflow-y: visible; /* Disable scroll for stacked content */
-             }
-             nav, footer {
+            nav, footer {
                  padding-left: 20px;
                  padding-right: 20px;
              }
-             .nav-container {
-                 padding: 0; /* Remove padding if nav has it now */
+             .nav-links a {
+                 margin-left: 20px;
+             }
+             .portfolio-container {
+                 flex-direction: column; /* Stack sidebar and content */
+             }
+             .sidebar {
+                 width: 100%; /* Full width */
+                 border-right: none; /* Remove side border */
+                 border-bottom: 1px solid #e9ecef; /* Add bottom border */
+                 padding: 30px 20px;
+                 height: auto; /* Let height adjust */
+                 overflow-y: visible; /* Disable scroll */
+             }
+             .content-area-placeholder { /* Adjust content padding */
+                 padding: 30px 20px;
+             }
+             /* Ensure centering works on smaller screens too */
+             .sidebar .social-links {
+                 margin-top: 20px; /* Adjust top margin */
+                 justify-content: center; /* Explicitly center */
              }
         }
 
-         @media (max-width: 768px) {
-             nav {
+        @media (max-width: 768px) {
+            nav {
+                 padding: 10px 20px;
                  flex-direction: column;
                  align-items: flex-start;
-                 padding: 15px 20px;
-             }
-             .nav-brand {
-                 margin-bottom: 10px;
-             }
-             .nav-links {
-                 margin-left: 0;
-                 display: flex;
-                 flex-wrap: wrap;
-                 gap: 15px;
-             }
-             .nav-links a {
-                 margin-left: 0;
-             }
-             .main-content h1 { font-size: 1.8em; }
-             .main-content p { font-size: 1em; }
-             footer {
-                  flex-direction: column;
-                  gap: 10px;
-                  padding: 15px 20px;
-                  text-align: center;
-              }
-         }
-
+            }
+            .nav-brand { margin-bottom: 10px; }
+            .nav-links { margin-left: 0; display: flex; flex-wrap: wrap; gap: 15px; }
+            .nav-links a { margin-left: 0; }
+            .sidebar { padding: 20px; }
+            .content-area-placeholder { padding: 20px; }
+            footer { padding: 10px 20px; flex-direction: column; text-align: center; gap: 5px; }
+        }
     </style>
 </head>
 <body>
     <div class="site-wrapper">
         <nav>
-            <div class="nav-container"> <a href="index.html" class="nav-brand">Joanna Lee</a>
-                <div class="nav-links">
-                    <a href="index.html">HOME</a>
-                    <a href="market-research.html">MARKET RESEARCH</a>
-                    <a href="social-media-marketing.html">SOCIAL MEDIA MARKETING</a>
-                    <a href="ux-ui.html">UX/UI</a>
-                </div>
+            <a href="index.html" class="nav-brand">Joanna Lee</a>
+            <div class="nav-links">
+                <a href="index.html">HOME</a>
+                <a href="market-research.html">MARKET RESEARCH</a>
+                <a href="social-media-marketing.html">SOCIAL MEDIA MARKETING</a>
+                <a href="ux-ui.html">UX/UI</a>
             </div>
         </nav>
 
         <div class="portfolio-container">
             <aside class="sidebar">
                 <div class="sidebar-content">
-                    <div class="role" style="color: #7996B9; font-size: 24px; font-weight: bold;">Market Research</div> <div class="description">
-                         Explore insights and analyses from various market research projects. Understanding market dynamics, consumer behavior, and competitive landscapes to inform strategic decisions.
+                    <div class="role" style="color: #7996B9; font-size: 24px; font-weight: bold;">UX/UI Designer</div>
+                    <div class="description">
+                        I have a strong foundation in UX/UI as a student at UMGC. I strive to demonstrate my expertise in creating user-centered accessible designs that align with business goals. My designs highlight my skills in user research, visual design, and functional prototyping.
                     </div>
-                     <div class="social-links">
-                        <a href="https://drive.google.com/file/d/14bLZ4Ctbiae_hWwHmp58Lc_QXqbNk799/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Download Resume" class="resume-link" title="Download Resume">
+                    <div class="social-links">
+                        <a href="https://drive.google.com/file/d/14bLZ4Ctbiae_hWwHmp58Lc_QXqbNk799/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Download Resume" class="resume-link" title="Download UX/UI Resume">
                             Resume
                             <i class="fas fa-download"></i>
                         </a>
@@ -278,10 +253,9 @@
                 </div>
             </aside>
 
-            <main class="main-content">
-                <h1>Market Research Overview</h1>
-                <p>This section will contain the specific details, findings, and analyses related to market research projects. Add your charts, summaries, competitor analyses, surveys, etc., here.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <main class="content-area-placeholder">
+                <h1>Page Title</h1>
+                <p>Your main page content goes here...</p>
                 </main>
         </div>
 
